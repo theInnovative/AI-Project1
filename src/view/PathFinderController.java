@@ -2,22 +2,30 @@ package view;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 public class PathFinderController implements Initializable {
 
 	private static SimGUI grid;
 	private static Cell[][] gridVals;
 	private static Point start, goal;
-	public static final String path = ""; 
-	private static String file = "";
-	private final static int MAXTRIALS = 5;
+	private final static int MAXTRIALS = 2;
+	private final static String path = "Trial Output\\";
+	private static List<Point> centers = new ArrayList<Point>();
+	private static HeuristicAlgorithm[] algorithms;
 	
 	@FXML
 	protected Button begin;
@@ -29,32 +37,30 @@ public class PathFinderController implements Initializable {
 	protected Label label;
 	@FXML
 	protected TextField pathname;
-	
-	
-	public static class Cell{
-		short type= 1;
-		boolean path = false;
-		boolean route = false;
-		double f, g = Double.POSITIVE_INFINITY, h;
-		Point parent = null;
-		
-		public Cell(){}
-	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		algorithms = new HeuristicAlgorithm[3];
+		algorithms[0] = new UniformSearch();
 	}
 	
 	public void start(){
+		double a, b, c;
+		
 		begin.setDisable(true);
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+		grid = new SimGUI (160, 120, 1);
 		
-		runTrials(0);
-		//runTrials(1);
-		//runTrials(2);
+		a = runTrials(0);
+		b = runTrials(1);
+		c = runTrials(2);
 		
 		begin.setDisable(false);
+		
+		label.setText("Average Costs:\n"
+				+ "Uniform:\t " + a
+				+ "A*:\t\t" + b
+				+ "Weighted A*:\t" + c);
 	}
 	
 	public void load(){
@@ -62,11 +68,17 @@ public class PathFinderController implements Initializable {
 	}
 	
 	public void browse(){
-		
+		FileChooser fileChooser = new FileChooser();
+		Stage stage = new Stage();
+		File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            pathname.setText(file.getPath());
+        }
 	}
 	
 	private static double runTrials(int x){
-		grid = new SimGUI (160, 120, 1);
+		double total = 0;
+		
 		gridVals = new Cell[160][120];
 			
 		for(int i = 0; i < MAXTRIALS; i++){
@@ -78,22 +90,55 @@ public class PathFinderController implements Initializable {
 			selectVertices();
 			printGrid(x, i);
 			
-			switch(x){
-			case 0:
-				break;
-			case 1:
-				break;
-			default: 
-			
-			}
+			total += algorithms[0].findPath(start, goal, gridVals, grid);
 		}
 		
-		return Double.NaN;
+		return total / MAXTRIALS;
 	}
 	
 	private static void printGrid(int x, int count){
+		String name, line;
+		Point temp = null;
 		
+		switch(x){
+		case 0: name = 		"Uniform Search\\Uniform-" 	+ count + ".txt";	break;
+		case 1: name = 		"A-Star\\AStar-" 			+ count + ".txt";	break;
+		default: name = 	"Weighted-A-Star\\WAStar-"	+ count + ".txt";	break;
+		}
 		
+		FileWriter file;
+		try {
+			file = new FileWriter(path + name, false);
+			line = "[" + start.x + "," + start.y + "]";
+			file.write(line, 0, line.length());
+			file.write(System.getProperty("line.separator"));
+			line = "[" + goal.x + "," + goal.y + "]";
+			file.write(line, 0, line.length());
+			file.write(System.getProperty("line.separator"));
+			
+			for(int i = 0; i < centers.size(); i++){
+				temp = centers.get(i);
+				line = "[" + temp.x + "," + temp.y + "]";
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+			}
+			
+			for(int j = 0; j < 120; j++){
+				for(int i = 0; i < 160; i++){
+					if(!gridVals[i][j].path)
+						file.write(""+gridVals[i][j].type, 0, 1);
+					else if(gridVals[i][j].type == 1)
+						file.write("a", 0, 1);
+					else
+						file.write("b", 0, 1);
+				}
+				file.write(System.getProperty("line.separator"));
+			}
+			
+			file.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static void  selectVertices(){
@@ -113,7 +158,7 @@ public class PathFinderController implements Initializable {
 				valid = true;
 				start = new Point(x,y);
 				gridVals[x][y].route = true;
-				updateCell(x,y,true);			
+				updateCell(x,y);			
 			}
 		}
 		
@@ -134,7 +179,7 @@ public class PathFinderController implements Initializable {
 					valid = true;
 					goal = new Point(x,y);
 					gridVals[x][y].route = true;
-					updateCell(x,y,true);	
+					updateCell(x,y);	
 				}		
 			}
 		}
@@ -151,7 +196,7 @@ public class PathFinderController implements Initializable {
 				i--;
 			else{
 				gridVals[x][y].type = 0;
-				updateCell(x,y,true);
+				updateCell(x,y);
 			}
 		}
 	}
@@ -178,7 +223,7 @@ public class PathFinderController implements Initializable {
 			}
 		}
 		
-		updateGrid(1,false);
+		updateGrid(1);
 		return true;
 	}
 
@@ -288,14 +333,14 @@ public class PathFinderController implements Initializable {
 				if(x+(i*a) < 0 || x+(i*a) > 159)
 					return;
 				gridVals[x+(i*a)][y].path = false;
-				updateCell(x+(i*a),y,true);
+				updateCell(x+(i*a),y);
 			}
 		}else{
 			for(int i = 0; i < 20; i++){
 				if(y+(i*a) < 0 || y+(i*a) > 119)
 					return;
 				gridVals[x][y+(i*a)].path = false;
-				updateCell(x,y+(i*a),true);
+				updateCell(x,y+(i*a));
 			}
 		}
 		return;
@@ -317,7 +362,7 @@ public class PathFinderController implements Initializable {
 			x = (int) (Math.random() * 160);
 			y = (int) (Math.random() * 120);
 			
-			//gridVals[x][y].type = 0;
+			centers.add(new Point(x,y));
 			
 			for(int i = x-16; i < x+16 && i < 160; i++){
 				for(int j = y-16; j < y+16 && j < 120; j++){
@@ -329,52 +374,48 @@ public class PathFinderController implements Initializable {
 				}
 			}
 		}
-		updateGrid(0, false);
+		updateGrid(0);
 	}
 	
-	private static void updateGrid(int mode, boolean x){
+	private static void updateGrid(int mode){
 		for(int i = 0; i < 160; i++)
 			for(int j = 0; j < 120; j++){
 				if(mode == 1){
 					if(gridVals[i][j].path)
-						updateCell(i,j,x);
+						updateCell(i,j);
 					continue;
 				}
-				updateCell(i,j,x);
+				updateCell(i,j);
 			}
 	}
 	
-	private static void updateCell(int i, int j, boolean x){
+	private static void updateCell(int i, int j){
 		if(gridVals[i][j].route){
-			grid.setCell(j, i, Color.RED);
+			if(grid.getColor(j, i) != Color.RED)
+				grid.setCell(j, i, Color.RED);
 			return;
 		}		
 		if(gridVals[i][j].path){
-			grid.setCell(j, i, Color.BLUE);
+			if(grid.getColor(j, i) != Color.BLUE)
+				grid.setCell(j, i, Color.BLUE);
 			return;
 		}
 		switch(gridVals[i][j].type){
-		case 0: grid.setCell(j, i, Color.BLACK); break;
+		case 0: 
+			if(grid.getColor(j, i) != Color.BLACK)
+				grid.setCell(j, i, Color.BLACK); break;
 		case 1: 
-			if(x)
-				grid.setCell(j, i, Color.WHITE);	
-			break;		
-		case 2: grid.setCell(j, i, Color.GRAY); break;
+			if(grid.getColor(j, i) != Color.WHITE)
+				grid.setCell(j, i, Color.WHITE); break;		
+		case 2:
+			if(grid.getColor(j, i) != Color.GRAY)
+				grid.setCell(j, i, Color.GRAY); break;
 		}
 	}
 	
 	private static void initGridVals(){
 		for(int i = 0; i < 160; i++)
-			for(int j = 0; j < 120; j++){
-				if(gridVals[i][j] == null)
+			for(int j = 0; j < 120; j++)
 					gridVals[i][j] = new Cell();
-				else if(gridVals[i][j].type != 1 || gridVals[i][j].path
-						|| gridVals[i][j].route){
-					gridVals[i][j] = new Cell();
-					updateCell(i,j,true);
-					continue;
-				}else
-					gridVals[i][j] = new Cell();
-			}
 	}
 }

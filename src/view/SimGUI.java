@@ -25,7 +25,7 @@ public class SimGUI extends JFrame {
 	public SimGUI(int x, int y, int delay) {
 		super("PathFinder");
 		//this.isEnabled = true;
-		this.delay = delay;
+		this.delay = delay * 10000;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(y * BUTTON_SIZE, x * BUTTON_SIZE);
 		
@@ -54,10 +54,13 @@ public class SimGUI extends JFrame {
 	**/
 	public void setCell(int row, int col, Color c){
 		try{
-		Thread.sleep(delay);}catch(Exception e){}
+		Thread.sleep(0, delay);}catch(Exception e){}
 		buttons[row][col].setBackground(c);
 		buttons[row][col].repaint();
+	}
 	
+	public Color getColor(int row, int col){
+		return buttons[row][col].getBackground();
 	}
 }
 
