@@ -3,7 +3,7 @@ package view;
 /**
  * Class representation of the A* algorithm,
  * extending the Heuristic Algorithm class.
- * 
+ *
  * @author Eric Cajuste
  * @author Thurgood Kipler
  */
@@ -11,7 +11,7 @@ package view;
 import java.util.Arrays;
 
 public class AStar extends HeuristicAlgorithm {
-	private static final int HEURISTICS = 3;
+	private static final int HEURISTICS = 2;
 
 	@Override
 	void fOfNeighbor(Cell cell) {
@@ -25,16 +25,16 @@ public class AStar extends HeuristicAlgorithm {
 		cell.h = new double[HEURISTICS + 1];
 		cell.h[1] = manhattanDistance(cell);
 		cell.h[2] = euclideanDistance(cell);
-		cell.h[3] = beelineDistance(cell);
-		
+		//cell.h[3] = beelineDistance(cell);
+
 		// more heuristic algorithms can be calculated
-		
+
 		//cell.h=(dx+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy);
-		
+
 		//selects the largest heuristic calculation
 		cell.h[0] = Arrays.stream(cell.h).max().getAsDouble();
 	}
-	
+
 	/**
 	 * Calculates the Manhattan distance from cell to the target cell
 	 * @param cell	starting location
@@ -45,7 +45,7 @@ public class AStar extends HeuristicAlgorithm {
 		double dy = Math.abs(cell.self.y-goalpoint.y);
 		return dx + dy;
 	}
-	
+
 	/**
 	 * Calculates the euclidean (ordinary) distance from cell to the target cell
 	 * @param cell	starting location

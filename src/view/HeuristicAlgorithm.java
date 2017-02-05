@@ -82,15 +82,24 @@ public abstract class HeuristicAlgorithm {
 	}
 
 	protected double cost(Cell a, Cell b){
-		int diff = Math.abs(a.self.x - b.self.x) + Math.abs(b.self.y - b.self.y);
+		int diff = Math.abs(a.self.x - b.self.x) + Math.abs(a.self.y - b.self.y);
 		double cost;
 
-		if(diff == 1){
-			cost = (a.type + b.type) / 2;
-			if(a.path && b.path)
-				cost /= 4;
-		}else
-			cost = (a.type + b.type) * Math.sqrt(2) / 2;
+		//unblocked move cost
+		if(diff == 1)
+			cost = 1;
+		else
+			cost = Math.sqrt(2);
+
+		//moving from hard to hard
+		if(a.type>1 && b.type>1){
+			cost *= 2;
+		//moving between unblocked and hard
+		}else if(a.type>1 || b.type>1)
+			cost *= 1.5;
+		//reduced highway cost
+		if(a.path || b.path)
+			cost /= 4;
 
 		return cost;
 	}
