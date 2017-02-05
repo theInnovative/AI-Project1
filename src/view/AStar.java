@@ -11,6 +11,7 @@ package view;
 import java.util.Arrays;
 
 public class AStar extends HeuristicAlgorithm {
+	private static final int HEURISTICS = 3;
 
 	@Override
 	void fOfNeighbor(Cell cell) {
@@ -21,6 +22,7 @@ public class AStar extends HeuristicAlgorithm {
 	void hOfNeighbor(Cell cell) {
 		if(cell.h != null)
 			return;
+		cell.h = new double[HEURISTICS + 1];
 		cell.h[1] = manhattanDistance(cell);
 		cell.h[2] = euclideanDistance(cell);
 		cell.h[3] = beelineDistance(cell);
