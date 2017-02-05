@@ -9,10 +9,8 @@ public class SimGUI extends JFrame {
 	
 	private static final long serialVersionUID = 2L;
 	
-	private int delay;
-	//private boolean isEnabled;
-	
 	private static final int BUTTON_SIZE = 15;	
+	private static final int delay = 5 * 100000;
 	public JButton[][] buttons;
 	private JPanel gamePanel;
 
@@ -22,10 +20,9 @@ public class SimGUI extends JFrame {
 	 * @param size the length of one dimension of a square tissue sample.
 	 * @param delay how long a cell waits before changing colors (in milliseconds)
 	 */
-	public SimGUI(int x, int y, int delay) {
+	public SimGUI(int x, int y) {
 		super("PathFinder");
 		//this.isEnabled = true;
-		this.delay = delay * 10000;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(y * BUTTON_SIZE, x * BUTTON_SIZE);
 		

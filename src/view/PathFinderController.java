@@ -24,7 +24,7 @@ public class PathFinderController implements Initializable {
 	private static SimGUI grid;
 	private static Cell[][] gridVals;
 	private static Point start, goal;
-	private final static int MAXTRIALS = 2;
+	private final static int MAXTRIALS = 1;
 	private final static String path = "Trial Grids\\Grid-";
 	private static List<Point> centers;
 	private static HeuristicAlgorithm[] algorithms;
@@ -75,7 +75,7 @@ public class PathFinderController implements Initializable {
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 
 		if(grid == null)
-			grid = new SimGUI (160, 120, 1);
+			grid = new SimGUI (160, 120);
 
 		a = runTrials(0);
 		b = runTrials(1);
@@ -128,6 +128,13 @@ public class PathFinderController implements Initializable {
 			total += algorithms[x].findPath(start, goal, gridVals, grid);
 			tracePath();
 		}
+		
+		try {
+			Thread.sleep(2*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return total / MAXTRIALS;
 	}
@@ -142,7 +149,7 @@ public class PathFinderController implements Initializable {
 				BufferedReader reader = new BufferedReader(new FileReader(file));
 
 				if(grid == null)
-					grid = new SimGUI(160, 120, 1);
+					grid = new SimGUI(160, 120);
 				gridVals = new Cell[160][120];
 
 				line = reader.readLine().substring(1);
@@ -181,7 +188,7 @@ public class PathFinderController implements Initializable {
 							gridVals[j][i].type = 0;
 							break;
 						}
-						updateCell(j,i);
+						//updateCell(j,i);
 						line = line.substring(1);
 					}
 					line = reader.readLine();
@@ -192,6 +199,8 @@ public class PathFinderController implements Initializable {
 			} catch (IOException e){
 				e.printStackTrace();
 			}
+			
+			updateGrid(0);
 
 			updateCell(start.x, start.y);
 			updateCell(goal.x, goal.y);
@@ -440,14 +449,14 @@ public class PathFinderController implements Initializable {
 				if(x+(i*a) < 0 || x+(i*a) > 159)
 					return;
 				gridVals[x+(i*a)][y].path = false;
-				updateCell(x+(i*a),y);
+				//updateCell(x+(i*a),y);
 			}
 		}else{
 			for(int i = 0; i < 20; i++){
 				if(y+(i*a) < 0 || y+(i*a) > 119)
 					return;
 				gridVals[x][y+(i*a)].path = false;
-				updateCell(x,y+(i*a));
+				//updateCell(x,y+(i*a));
 			}
 		}
 		return;
