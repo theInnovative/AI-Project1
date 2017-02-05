@@ -13,7 +13,7 @@ public class SimGUI extends JFrame {
 	//private boolean isEnabled;
 	
 	private static final int BUTTON_SIZE = 15;	
-	private JButton[][] buttons;
+	public JButton[][] buttons;
 	private JPanel gamePanel;
 
 	/**

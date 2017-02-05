@@ -12,7 +12,7 @@
       <TextField fx:id="pathname" editable="false" layoutX="195.0" layoutY="8.0" prefHeight="25.0" />
       <Button fx:id="browse" layoutX="344.0" layoutY="8.0" mnemonicParsing="false" onAction="#browse" text="Browse" />
     <Button fx:id="begin" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#start" text="Start Trials" />
-      <Button fx:id="load" layoutX="101.0" layoutY="8.0" mnemonicParsing="false" onAction="#load" text="Load File" />
+      <Button fx:id="load" disable="true" layoutX="101.0" layoutY="8.0" mnemonicParsing="false" onAction="#load" text="Load File" />
    </children>
    <padding>
       <Insets left="10.0" right="10.0" />

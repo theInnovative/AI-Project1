@@ -14,16 +14,21 @@ import java.util.List;
 
 public class Cell {
 	short type= 1;
-	boolean path = false;
-	boolean route = false;
-	double f, g = Double.POSITIVE_INFINITY, h;
-	Point parent = null;
 
-	Point pos = null;
-	List<Cell> neighbors= new ArrayList<Cell>();
+	boolean path = false, route = false;
+	double f, g, h;
+	Point self = null;
+	Cell parent;
 
-	public Cell(){}
 	public Cell(int x, int y){
-		this.pos=new Point(x, y);
+		self = new Point(x,y);
+	}
+
+	@Override
+	public boolean equals(Object o){
+		if(!(o instanceof Cell))
+			return false;
+		Cell c = (Cell) o;
+		return c.self.equals(self);
 	}
 }

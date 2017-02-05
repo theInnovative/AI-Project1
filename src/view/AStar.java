@@ -7,7 +7,7 @@ import java.util.Set;
 public class AStar extends HeuristicAlgorithm {
 
 	@Override
-	double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid)
+	protected double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid)
 	{
 		Set<Cell> open = new HashSet<Cell>();
 	    Set<Cell> closed = new HashSet<Cell>();
@@ -30,14 +30,14 @@ public class AStar extends HeuristicAlgorithm {
 	            }
 	        }
 
-	        if (current.parent == goal) {
+	        if (current.parent.equals(gV[goal.x][goal.y])) {
 	            break;
 	        }
 
 	        open.remove(current);
 	        closed.add(current);
-	        getNeighbors(gV, 160, 120, current);
-	        for (Cell neighbor : current.neighbors) {
+
+	        for (Cell neighbor : getNeighbors(current, gV)) {
 	            if (neighbor == null) {
 	                continue;
 	            }
@@ -51,9 +51,9 @@ public class AStar extends HeuristicAlgorithm {
 
 	            if (!open.contains(neighbor) && !closed.contains(neighbor)) {
 	                neighbor.g = nextG;
-	                neighbor.h = getManhattanDist(neighbor.pos, goal);
+	                neighbor.h = getManhattanDist(neighbor.self, goal);
 	                neighbor.f = neighbor.g + neighbor.h;
-	                neighbor.parent = current.pos;
+	                neighbor.parent = current;
 	                open.add(neighbor);
 	            }
 	        }
@@ -66,7 +66,7 @@ public class AStar extends HeuristicAlgorithm {
 		while(tracer.parent != null){
 			tracer.route=true;
 			totalCost+=tracer.f;
-			tracer=gV[tracer.parent.x][tracer.parent.y];
+			tracer=tracer.parent;
 		}
 
 		return totalCost;
@@ -75,22 +75,19 @@ public class AStar extends HeuristicAlgorithm {
 	//return manhattan distance between two points
 	public int getManhattanDist(Point c, Point goal) {
 	    return Math.abs(c.x - goal.x) + Math.abs(c.y - goal.y);
+
 	}
 
-	//populate neighbor list for a cell in gV at coordinates x,y
-	public void getNeighbors(Cell[][] gV, int width, int height, Cell curr) {
-		for (int i=-1 ; i<2 ; i++)
-			for (int j=-1 ; j<2 ; j++)
-			  if (i !=0 && j != 0){
-			     int rx = curr.pos.x + i;
-			     int ry = curr.pos.y + j;
-			     if (rx >= 0 && ry >= 0 && rx < width && ry < height){
-			    	 if(gV[rx][ry].type>0){
-			    		 gV[rx][ry].g=1;
-			    		 curr.neighbors.add(gV[rx][ry]);
-			    	 }
-			     }
-			  }
-        return;
-    }
+	@Override
+	void fOfNeighbor(Cell cell) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	void hOfNeighbor(Cell cell) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
