@@ -1,24 +1,29 @@
 package view;
 
-import java.awt.Point;
+/**
+ * Class representation of the Weighted A* algorithm,
+ * extending the A* class which is also an extension
+ * of the Heuristic Algorithm class.
+ * 
+ * @author Eric Cajuste
+ * @author Thurgood Kipler
+ */
 
-public class WeightedAStar extends HeuristicAlgorithm {
-
-	private double weight = 2.5;
+public class WeightedAStar extends AStar {
 	
-	@Override
-	void fOfNeighbor(Cell cell) {
-		cell.f=cell.g+cell.h;
-	}
-
+	/**
+	 * Weight factor used in calculating heuristic values.
+	 */
+	private final double weight = 2.5;
+	
+	/**
+	 * Calculates the heuristic value using A* implementation
+	 * and is factored by specified weight.
+	 */
 	@Override
 	void hOfNeighbor(Cell cell) {
-		double dx = Math.abs(cell.self.x-goalpoint.x);
-		double dy = Math.abs(cell.self.y-goalpoint.y);
-		//manhattan distance
-		//cell.h=(dx+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy) * weight;
-		//euclidean distance
-		cell.h = Math.sqrt(dx*dx + dy*dy) * weight;
+		super.hOfNeighbor(cell);
+		cell.h[0] *= weight;
 	}
 
 }

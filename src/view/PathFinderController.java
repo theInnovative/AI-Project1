@@ -24,7 +24,7 @@ public class PathFinderController implements Initializable {
 	private static SimGUI grid;
 	private static Cell[][] gridVals;
 	private static Point start, goal;
-	private final static int MAXTRIALS = 5;
+	private final static int MAXTRIALS = 2;
 	private final static String path = "Trial Grids\\Grid-";
 	private static List<Point> centers;
 	private static HeuristicAlgorithm[] algorithms;
@@ -83,10 +83,10 @@ public class PathFinderController implements Initializable {
 
 		begin.setDisable(false);
 
-		label.setText("Average Costs:\n"
-				//+ "Uniform:\t " + a
-				+ "A*:\t\t" + b
-				//+ "Weighted A*:\t" + c
+		label.setText("Average Costs:"
+				+ "\nUniform:\t " + a
+				+ "\nA*:\t\t" + b
+				+ "\nWeighted A*:\t" + c
 				);
 	}
 
@@ -119,12 +119,13 @@ public class PathFinderController implements Initializable {
 				while(!placePaths());
 				placeBlockedCells();
 				selectVertices();
-
+				updateGrid(0);
+				
 				printGrid(i);
 			}else
 				loadGrid(path + i + ".txt");
 
-			total += algorithms[0].findPath(start, goal, gridVals, grid);
+			total += algorithms[x].findPath(start, goal, gridVals, grid);
 			tracePath();
 		}
 
@@ -141,7 +142,7 @@ public class PathFinderController implements Initializable {
 				BufferedReader reader = new BufferedReader(new FileReader(file));
 
 				if(grid == null)
-					grid = new SimGUI(160, 120, 5);
+					grid = new SimGUI(160, 120, 1);
 				gridVals = new Cell[160][120];
 
 				line = reader.readLine().substring(1);
@@ -302,7 +303,7 @@ public class PathFinderController implements Initializable {
 				i--;
 			else{
 				gridVals[x][y].type = 0;
-				updateCell(x,y);
+				//updateCell(x,y);
 			}
 		}
 	}
@@ -329,7 +330,7 @@ public class PathFinderController implements Initializable {
 			}
 		}
 
-		updateGrid(1);
+		//updateGrid(1);
 		return true;
 	}
 
@@ -480,7 +481,7 @@ public class PathFinderController implements Initializable {
 				}
 			}
 		}
-		updateGrid(0);
+		//updateGrid(0);
 	}
 
 	private static void updateGrid(int mode){

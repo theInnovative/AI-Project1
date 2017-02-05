@@ -1,16 +1,15 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
 public abstract class HeuristicAlgorithm {
-	List<Cell> closed;
-
 	double avg = 0;
+	List<Cell> closed;
 	PriorityQueue<Cell> fringe;
-
 	Point goalpoint;
 
 	public HeuristicAlgorithm(){
@@ -43,7 +42,8 @@ public abstract class HeuristicAlgorithm {
 			if(tmp.self.equals(goal))
 				return tmp.f;
 			closed.add(tmp);
-			n = getNeighbors(tmp, gV);
+			grid.setCell(tmp.self.y, tmp.self.x, Color.PINK);
+			n = getNeighbors(tmp, gV, grid);
 			for(int i = 0; i < n.size(); i++){
 				tmp2 = n.get(i);
 				if(!closed.contains(tmp2)){
@@ -60,9 +60,9 @@ public abstract class HeuristicAlgorithm {
 	}
 
 	protected void updateVertex(Cell home, Cell neighbor) {
-		double cost = home.g + cost(home, neighbor);
-		if(cost < neighbor.g){
-			neighbor.g = cost;
+		double c = home.g + cost(home, neighbor);
+		if(c < neighbor.g){
+			neighbor.g = c;
 			neighbor.parent = home;
 			hOfNeighbor(neighbor);
 			fOfNeighbor(neighbor);
@@ -85,7 +85,7 @@ public abstract class HeuristicAlgorithm {
 		return cost;
 	}
 
-	protected List<Cell> getNeighbors(Cell cell, Cell[][] gV){
+	protected List<Cell> getNeighbors(Cell cell, Cell[][] gV, SimGUI grid){
 		List<Cell> neighbors = new ArrayList<Cell>();
 		Cell tmp = null;
 		int x, y;
@@ -103,8 +103,12 @@ public abstract class HeuristicAlgorithm {
 				tmp = gV[x][y];
 				if(cell == tmp)
 					continue;
-				if(tmp.type != 0)
+				if(tmp.type != 0){
 					neighbors.add(tmp);
+					Color c = grid.getColor(tmp.self.y, tmp.self.x);
+					if(c != Color.PINK && c != Color.MAGENTA)
+						grid.setCell(tmp.self.y, tmp.self.x, Color.MAGENTA);
+				}
 			}
 		}
 

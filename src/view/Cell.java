@@ -1,22 +1,32 @@
 package view;
 
+/**
+ * Class representation of Cell node.
+ * 
+ * @author Eric Cajuste
+ * @author Thurgood Kipler
+ */
+
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.List;
-
-//blocked cell = type 0
-//open cell = type 1
-//hard cell = type 2
-
-//f = g + h
-//g = cost to move to neighbor cell
-//h = estimated distance from cell to goal
 
 public class Cell {
+	/**
+	 * blocked 	= type 0
+	 * open  	= type 1
+	 * hard 	= type 2
+	 */
 	short type= 1;
 
+	/**
+	 * f = g (+ h)(* weight)
+	 * g = cost to move to neighbor cell
+	 * h = estimated distance from cell to goal
+	 */
+	double f, g;
+	
+	
+	double h[];
 	boolean path = false, route = false;
-	double f, g, h;
 	Point self = null;
 	Cell parent;
 
