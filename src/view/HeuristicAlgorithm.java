@@ -11,7 +11,7 @@ public abstract class HeuristicAlgorithm {
 	List<Cell> closed;
 	PriorityQueue<Cell> fringe;
 	Point goalpoint;
-	Stats stats;
+	String name = "";
 
 	public HeuristicAlgorithm(){
 		closed = new ArrayList<Cell>();
@@ -21,24 +21,32 @@ public abstract class HeuristicAlgorithm {
 						else if(a.f < b.f)
 							return -1;
 						return 1;});
-		stats = new Stats();
 	}
 
 	public class Stats{
-
-
+		double totalCost;
+		long runtime;
+		double expanded;
+		int cellsTraveled;
+		
 		public String toString(){
-			return null;
+			return "\t" + name + ":"
+					+ "\tTotal Cost: " + totalCost
+					+ "\tRuntime: " + runtime
+					+ "\tCells Traveled: " + cellsTraveled
+					+ "\tExpanded: " + expanded;
 		}
 	}
 
 	abstract void fOfNeighbor(Cell cell);
 	abstract void hOfNeighbor(Cell cell);
 
-	protected double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
+	protected Stats findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
 		Cell tmp = gV[start.x][start.y], tmp2;
 		List<Cell> n = null;
 		goalpoint=goal;
+		Stats s = new Stats();
+		long startTime = System.currentTimeMillis();
 
 		tmp.g = 0;
 		tmp.parent = tmp;
@@ -49,10 +57,14 @@ public abstract class HeuristicAlgorithm {
 
 		while(!fringe.isEmpty()){
 			tmp = fringe.poll();
-			if(tmp.self.equals(goal))
-				return tmp.f;
+			if(tmp.self.equals(goal)){
+				s.totalCost = tmp.f;
+				s.runtime = System.currentTimeMillis() - startTime;
+				return s;
+			}
 			closed.add(tmp);
 			grid.setCell(tmp.self.y, tmp.self.x, Color.PINK);
+			s.expanded++;
 			n = getNeighbors(tmp, gV, grid);
 			for(int i = 0; i < n.size(); i++){
 				tmp2 = n.get(i);
@@ -66,7 +78,9 @@ public abstract class HeuristicAlgorithm {
 			}
 		}
 
-		return Double.POSITIVE_INFINITY;
+		s.totalCost = Double.POSITIVE_INFINITY;
+		s.runtime = System.currentTimeMillis() - startTime;
+		return s;
 	}
 
 	protected void updateVertex(Cell home, Cell neighbor) {

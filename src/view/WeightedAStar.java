@@ -16,6 +16,10 @@ public class WeightedAStar extends AStar {
 	 */
 	private final double weight = 2.5;
 
+	public WeightedAStar(){
+		name = "W-AStar";
+	}
+
 	/**
 	 * Calculates the heuristic value using A* implementation
 	 * and is factored by specified weight.
