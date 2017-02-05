@@ -17,7 +17,7 @@ public class WeightedAStar extends AStar {
 	private final double weight = 2.5;
 
 	public WeightedAStar(){
-		name = "W-AStar";
+		name = "W-AStar:";
 	}
 
 	/**
