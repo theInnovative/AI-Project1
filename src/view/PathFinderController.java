@@ -25,6 +25,7 @@ public class PathFinderController implements Initializable {
 	private static Cell[][] gridVals;
 	private static Point start, goal;
 	private final static int MAXTRIALS = 1;
+	private final static int MAXGRIDS = 5;
 	private final static String path = "Trial Grids\\Grid-";
 	private static List<Point> centers;
 	private static HeuristicAlgorithm[] algorithms;
@@ -68,25 +69,21 @@ public class PathFinderController implements Initializable {
 
 	}
 
-	public void start(){
-		double a, b, c;
-
+	public void start() throws InterruptedException{
 		begin.setDisable(true);
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 
 		if(grid == null)
 			grid = new SimGUI (160, 120);
 
-		a = runTrials(0);
-		b = runTrials(1);
-		c = 0;//runTrials(2);
+		runTrials();
 
 		begin.setDisable(false);
 
 		label.setText("Average Costs:"
-				+ "\nUniform:\t " + a
-				+ "\nA*:\t\t" + b
-				+ "\nWeighted A*:\t" + c
+				+ "\nUniform:\t "
+				+ "\nA*:\t\t"
+				+ "\nWeighted A*:\t"
 				);
 	}
 
@@ -105,44 +102,49 @@ public class PathFinderController implements Initializable {
         }
 	}
 
-	private static double runTrials(int x){
-		double total = 0;
-
+	private static void runTrials() throws InterruptedException{
 		gridVals = new Cell[160][120];
 		centers = new ArrayList<Point>();
 
-		for(int i = 0; i < MAXTRIALS; i++){
-			if(x == 0){
-				initGridVals();
-
-				placeHardCells();
-				while(!placePaths());
-				placeBlockedCells();
+		for(int i = 0; i < MAXGRIDS; i++){
+			for(int j = 0; j < MAXTRIALS; j++){
+				centers.clear();
+				
+				if(j == 0){
+					initGridVals();
+					placeHardCells();
+					while(!placePaths());
+					placeBlockedCells();
+				}else
+					loadGrid(path + i + "-" + '0' + ".txt");
+			
 				selectVertices();
 				updateGrid(0);
+				printGrid(i, j);
 				
-				printGrid(i);
-			}else
-				loadGrid(path + i + ".txt");
-
-			total += algorithms[x].findPath(start, goal, gridVals, grid);
-			tracePath();
+				algorithms[0].findPath(start, goal, gridVals, grid);
+				tracePath();
+				Thread.sleep(2*1000);
+				
+				loadGrid(path + i + "-" + j +".txt");
+				algorithms[1].findPath(start, goal, gridVals, grid);
+				tracePath();
+				Thread.sleep(2*1000);
+				
+				loadGrid(path + i +  "-" + j +".txt");
+				algorithms[2].findPath(start, goal, gridVals, grid);
+				tracePath();
+				Thread.sleep(2*1000);
+				
+			}
 		}
-		
-		try {
-			Thread.sleep(2*1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return total / MAXTRIALS;
 	}
 
 
 	private static void loadGrid(String name){
 		String line, pts[];
 		File file = new File(name);
+		centers.clear();
 
 		if(file.exists()){
 			try {
@@ -160,12 +162,15 @@ public class PathFinderController implements Initializable {
 				pts = line.substring(0, line.length()-1).split(",");
 				goal = new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1]));
 
-				do{
-					line = reader.readLine();
-				}while(line.charAt(0) == '[');
+				for(int i = 0; i < 8; i++){
+					line = reader.readLine().substring(1);
+					pts = line.substring(0, line.length()-1).split(",");
+					centers.add(new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1])));
+				}
+				
+				line = reader.readLine();
 
 				for(int i = 0; i < 120; i++){
-
 					for(int j = 0; j < 160; j++){
 						gridVals[j][i] = new Cell(j,i);
 
@@ -218,8 +223,8 @@ public class PathFinderController implements Initializable {
 		}while(!tmp.self.equals(start));
 	}
 
-	private static void printGrid(int count){
-		String line, name = count + ".txt";
+	private static void printGrid(int count, int count2){
+		String line, name = count + "-" + count2 +".txt";
 		Point temp = null;
 
 		FileWriter file;

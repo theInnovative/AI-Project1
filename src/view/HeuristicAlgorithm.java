@@ -11,6 +11,7 @@ public abstract class HeuristicAlgorithm {
 	List<Cell> closed;
 	PriorityQueue<Cell> fringe;
 	Point goalpoint;
+	Stats stats;
 
 	public HeuristicAlgorithm(){
 		closed = new ArrayList<Cell>();
@@ -20,6 +21,15 @@ public abstract class HeuristicAlgorithm {
 						else if(a.f < b.f)
 							return -1;
 						return 1;});
+		stats = new Stats();
+	}
+	
+	public class Stats{
+		
+		
+		public String toString(){
+			return null;
+		}
 	}
 
 	abstract void fOfNeighbor(Cell cell);
