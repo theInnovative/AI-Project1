@@ -11,6 +11,8 @@ public abstract class HeuristicAlgorithm {
 	double avg = 0;
 	PriorityQueue<Cell> fringe;
 
+	Point goalpoint;
+
 	public HeuristicAlgorithm(){
 		closed = new ArrayList<Cell>();
 		fringe = new PriorityQueue<Cell>(11,
@@ -27,6 +29,7 @@ public abstract class HeuristicAlgorithm {
 	protected double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
 		Cell tmp = gV[start.x][start.y], tmp2;
 		List<Cell> n = null;
+		goalpoint=goal;
 
 		tmp.g = 0;
 		tmp.parent = tmp;
