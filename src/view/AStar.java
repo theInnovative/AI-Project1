@@ -23,14 +23,17 @@ public class AStar extends HeuristicAlgorithm {
 		if(cell.h != null)
 			return;
 		cell.h = new double[HEURISTICS];
-		//cell.h[1] = fourWayManhattanDistance(cell);
-		cell.h[2] = euclideanDistance(cell);
+		//cell.h[1] = eightWayManhattanDistance(cell);
+		cell.h[0] = euclideanDistance(cell);
 		//cell.h[3] = beelineDistance(cell);
 
 		// more heuristic algorithms can be calculated
 
 		//selects the largest heuristic calculation
-		cell.h[0] = Arrays.stream(cell.h).max().getAsDouble();
+		//cell.h[0] = Arrays.stream(cell.h).max().getAsDouble();
+
+		//tie breaker
+		cell.h[0]*=(1.0+0.25/300);
 	}
 
 	/**
