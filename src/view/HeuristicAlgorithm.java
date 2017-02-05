@@ -11,6 +11,7 @@ public abstract class HeuristicAlgorithm {
 	List<Cell> closed;
 	PriorityQueue<Cell> fringe;
 	Point goalpoint;
+	Stats stats;
 
 	public HeuristicAlgorithm(){
 		closed = new ArrayList<Cell>();
@@ -20,6 +21,15 @@ public abstract class HeuristicAlgorithm {
 						else if(a.f < b.f)
 							return -1;
 						return 1;});
+		stats = new Stats();
+	}
+
+	public class Stats{
+
+
+		public String toString(){
+			return null;
+		}
 	}
 
 	abstract void fOfNeighbor(Cell cell);
@@ -76,9 +86,12 @@ public abstract class HeuristicAlgorithm {
 		double cost;
 
 		//unblocked move cost
-		if(diff == 1)
+		if(diff == 1){
 			cost = 1;
-		else
+			//reduced highway cost
+			if(a.path && b.path)
+				cost /= 4;
+		}else
 			cost = Math.sqrt(2);
 
 		//moving from hard to hard
@@ -87,7 +100,6 @@ public abstract class HeuristicAlgorithm {
 		//moving between unblocked and hard
 		}else if(a.type>1 || b.type>1)
 			cost *= 1.5;
-
 
 		return cost;
 	}
