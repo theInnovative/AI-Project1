@@ -1,0 +1,4 @@
+
+
+Grid #0 Trial #0
+	Uniform:	Total Cost: 44.99264068711928	Runtime: 8217	Cells Traveled: 115	Expanded: 3542.0

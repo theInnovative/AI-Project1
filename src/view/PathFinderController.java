@@ -27,8 +27,10 @@ public class PathFinderController implements Initializable {
 	private final static int MAXTRIALS = 1;
 	private final static int MAXGRIDS = 5;
 	private final static String path = "Trial Grids\\Grid-";
+	private final static String path2 = "Trial Grids\\CompleteStats.txt";
 	private static List<Point> centers;
 	private static HeuristicAlgorithm[] algorithms;
+	private static HeuristicAlgorithm.Stats[][][] allStats;
 
 	@FXML
 	protected Button begin;
@@ -48,7 +50,7 @@ public class PathFinderController implements Initializable {
 		algorithms[1] = new AStar();
 		algorithms[2] = new WeightedAStar();
 
-
+		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][3];
 
 		/*for(int i = 0; i < grid.buttons.length; i++){
 			for(int j = 0; j < grid.buttons[0].length; j++){
@@ -66,10 +68,9 @@ public class PathFinderController implements Initializable {
 
 	public void displayInfo(){
 		//label.setText(value);
-
 	}
 
-	public void start() throws InterruptedException{
+	public void start() throws InterruptedException, IOException{
 		begin.setDisable(true);
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 
@@ -104,14 +105,23 @@ public class PathFinderController implements Initializable {
         }
 	}
 
-	private static void runTrials() throws InterruptedException{
+	private static void runTrials() throws InterruptedException, IOException{
 		gridVals = new Cell[160][120];
 		centers = new ArrayList<Point>();
+		String line = "";
+		
+		FileWriter file = new FileWriter(path2, false);
+		file.close();
+		file =  new FileWriter(path2, true);
 
 		for(int i = 0; i < MAXGRIDS; i++){
 			for(int j = 0; j < MAXTRIALS; j++){
 				centers.clear();
 
+				line = "\n\nGrid #" + i + " Trial #" + j;
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+				
 				if(j == 0){
 					initGridVals();
 					placeHardCells();
@@ -123,24 +133,40 @@ public class PathFinderController implements Initializable {
 				selectVertices();
 				updateGrid(0);
 				printGrid(i, j);
-
-				algorithms[0].findPath(start, goal, gridVals, grid);
-				tracePath();
+				
+				allStats[i][j][0] = algorithms[0].findPath(start, goal, gridVals, grid);
+				allStats[i][j][0].cellsTraveled = tracePath();
+				line = allStats[i][j][0].toString();
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+				file.close();
+				file = new FileWriter(path2, true);
 				Thread.sleep(2*1000);
 
 				loadGrid(path + i + "-" + j +".txt");
-				algorithms[1].findPath(start, goal, gridVals, grid);
-				tracePath();
+				allStats[i][j][1] = algorithms[1].findPath(start, goal, gridVals, grid);
+				allStats[i][j][1].cellsTraveled = tracePath();
+				line = allStats[i][j][1].toString();
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+				file.close();
+				file = new FileWriter(path2, true);
 				Thread.sleep(2*1000);
 
 				loadGrid(path + i +  "-" + j +".txt");
-				algorithms[2].findPath(start, goal, gridVals, grid);
-				tracePath();
+				allStats[i][j][2] = algorithms[2].findPath(start, goal, gridVals, grid);
+				allStats[i][j][2].cellsTraveled = tracePath();
+				line = allStats[i][j][2].toString();
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+				file.close();
+				file = new FileWriter(path2, true);
 				Thread.sleep(2*1000);
 
 			}
 
 		}
+		file.close();
 	}
 
 
@@ -160,10 +186,15 @@ public class PathFinderController implements Initializable {
 				line = reader.readLine().substring(1);
 				pts = line.substring(0, line.length()-1).split(",");
 				start = new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1]));
-
+				gridVals[start.x][start.y] = new Cell(start.x, start.y);
+				gridVals[start.x][start.y].route = true;
+				
+				
 				line = reader.readLine().substring(1);
 				pts = line.substring(0, line.length()-1).split(",");
 				goal = new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1]));
+				gridVals[goal.x][goal.y] = new Cell(goal.x, goal.y);
+				gridVals[goal.x][goal.y].route = true;
 
 				for(int i = 0; i < 8; i++){
 					line = reader.readLine().substring(1);
@@ -175,7 +206,8 @@ public class PathFinderController implements Initializable {
 
 				for(int i = 0; i < 120; i++){
 					for(int j = 0; j < 160; j++){
-						gridVals[j][i] = new Cell(j,i);
+						if(gridVals[j][i] == null)
+							gridVals[j][i] = new Cell(j,i);
 
 						switch(line.charAt(0)){
 						case 'b':
@@ -209,21 +241,23 @@ public class PathFinderController implements Initializable {
 			}
 
 			updateGrid(0);
-
-			updateCell(start.x, start.y);
-			updateCell(goal.x, goal.y);
 		}
 	}
 
-	private static void tracePath(){
+	private static int tracePath(){
 		Cell tmp = gridVals[goal.x][goal.y];
-		if(tmp.parent == null)
-			return;
-		do{
-			tmp.route = true;
-			updateCell(tmp.self.x,tmp.self.y);
-			tmp = tmp.parent;
-		}while(!tmp.self.equals(start));
+		int count = 0;
+		
+		if(tmp.parent != null){
+			do{
+				tmp.route = true;
+				updateCell(tmp.self.x,tmp.self.y);
+				tmp = tmp.parent;
+				count++;
+			}while(!tmp.self.equals(start));
+		}
+		
+		return count;
 	}
 
 	private static void printGrid(int count, int count2){
