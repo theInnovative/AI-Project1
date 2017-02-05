@@ -22,11 +22,11 @@ public class PathFinderController implements Initializable {
 	private static SimGUI grid;
 	private static Cell[][] gridVals;
 	private static Point start, goal;
-	private final static int MAXTRIALS = 2;
+	private final static int MAXTRIALS = 1;
 	private final static String path = "Trial Output\\";
 	private static List<Point> centers = new ArrayList<Point>();
 	private static HeuristicAlgorithm[] algorithms;
-	
+
 	@FXML
 	protected Button begin;
 	@FXML
@@ -42,31 +42,33 @@ public class PathFinderController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		algorithms = new HeuristicAlgorithm[3];
 		algorithms[0] = new UniformSearch();
+		algorithms[1] = new AStar();
 	}
-	
+
 	public void start(){
 		double a, b, c;
-		
+
 		begin.setDisable(true);
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 		grid = new SimGUI (160, 120, 1);
-		
-		a = runTrials(0);
+
+		//a = runTrials(0);
 		b = runTrials(1);
-		c = runTrials(2);
-		
+		//c = runTrials(2);
+
 		begin.setDisable(false);
-		
+
 		label.setText("Average Costs:\n"
-				+ "Uniform:\t " + a
+				//+ "Uniform:\t " + a
 				+ "A*:\t\t" + b
-				+ "Weighted A*:\t" + c);
+				//+ "Weighted A*:\t" + c
+				);
 	}
-	
+
 	public void load(){
-		
+
 	}
-	
+
 	public void browse(){
 		FileChooser fileChooser = new FileChooser();
 		Stage stage = new Stage();
@@ -75,37 +77,39 @@ public class PathFinderController implements Initializable {
             pathname.setText(file.getPath());
         }
 	}
-	
+
 	private static double runTrials(int x){
 		double total = 0;
-		
+
 		gridVals = new Cell[160][120];
-			
+
 		for(int i = 0; i < MAXTRIALS; i++){
 			initGridVals();
-			
+
 			placeHardCells();
 			while(!placePaths());
 			placeBlockedCells();
 			selectVertices();
+
+			total += algorithms[x].findPath(start, goal, gridVals, grid);
+
+			updateGrid(2);
 			printGrid(x, i);
-			
-			total += algorithms[0].findPath(start, goal, gridVals, grid);
 		}
-		
+
 		return total / MAXTRIALS;
 	}
-	
+
 	private static void printGrid(int x, int count){
 		String name, line;
 		Point temp = null;
-		
+
 		switch(x){
 		case 0: name = 		"Uniform Search\\Uniform-" 	+ count + ".txt";	break;
 		case 1: name = 		"A-Star\\AStar-" 			+ count + ".txt";	break;
 		default: name = 	"Weighted-A-Star\\WAStar-"	+ count + ".txt";	break;
 		}
-		
+
 		FileWriter file;
 		try {
 			file = new FileWriter(path + name, false);
@@ -115,14 +119,14 @@ public class PathFinderController implements Initializable {
 			line = "[" + goal.x + "," + goal.y + "]";
 			file.write(line, 0, line.length());
 			file.write(System.getProperty("line.separator"));
-			
+
 			for(int i = 0; i < centers.size(); i++){
 				temp = centers.get(i);
 				line = "[" + temp.x + "," + temp.y + "]";
 				file.write(line, 0, line.length());
 				file.write(System.getProperty("line.separator"));
 			}
-			
+
 			for(int j = 0; j < 120; j++){
 				for(int i = 0; i < 160; i++){
 					if(!gridVals[i][j].path)
@@ -134,44 +138,44 @@ public class PathFinderController implements Initializable {
 				}
 				file.write(System.getProperty("line.separator"));
 			}
-			
+
 			file.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private static void  selectVertices(){
 		int x, y;
 		boolean valid = false;
-		
+
 		while(!valid){
 			x = (int)(40*Math.random());
 			y = (int)(40*Math.random());
-			
+
 			if(x > 19)
 				x += 120;
 			if(y > 19)
 				y += 80;
-			
+
 			if(gridVals[x][y].type != 0){
 				valid = true;
 				start = new Point(x,y);
 				gridVals[x][y].route = true;
-				updateCell(x,y);			
+				updateCell(x,y);
 			}
 		}
-		
+
 		valid = false;
 		while(!valid){
 			x = (int)(40*Math.random());
 			y = (int)(40*Math.random());
-		
+
 			if(x > 19)
 				x += 120;
 			if(y > 19)
 				y += 80;
-			
+
 			if(gridVals[x][y].type != 0){
 				int dX = start.x - x, dY = start.y - y;
 				double d = Math.sqrt(dX*dX + dY*dY);
@@ -179,19 +183,19 @@ public class PathFinderController implements Initializable {
 					valid = true;
 					goal = new Point(x,y);
 					gridVals[x][y].route = true;
-					updateCell(x,y);	
-				}		
+					updateCell(x,y);
+				}
 			}
 		}
 	}
-	
+
 	private static void  placeBlockedCells(){
 		int x, y;
-		
+
 		for(int i = 0; i < 3840; i++){
 			x = (int)(160*Math.random());
 			y = (int)(120*Math.random());
-			
+
 			if(gridVals[x][y].type == 0 || gridVals[x][y].path)
 				i--;
 			else{
@@ -200,14 +204,14 @@ public class PathFinderController implements Initializable {
 			}
 		}
 	}
-	
+
 	private static boolean placePaths(){
 		boolean valid;
 		int i = 0;
-		
+
 		for(int a = 0; a < 4; a++){
 			valid = false;
-			
+
 			while(!valid){
 				if(i == 25){
 					unmarkAllPaths();
@@ -222,7 +226,7 @@ public class PathFinderController implements Initializable {
 				i++;
 			}
 		}
-		
+
 		updateGrid(1);
 		return true;
 	}
@@ -231,17 +235,17 @@ public class PathFinderController implements Initializable {
 		int c, newDir, x1, y1;
 		double r;
 		boolean valid;
-		
+
 		if(isClear(x, y, dir)){
 			c = markPath(x, y, dir);
-			
+
 			switch (dir){
 			case 0: x1 = x + (c-1); y1 = y; break;
 			case 1: x1 = x; y1 = y + (c-1); break;
 			case 2: x1 = x - (c-1); y1 = y; break;
 			default: x1 = x; y1 = y - (c-1); break;
 			}
-				
+
 			if(x1 == 0 || y1 == 0 || x1 == 159 || y1 == 119){
 				if(c+count >= 100)
 					return true;
@@ -256,30 +260,30 @@ public class PathFinderController implements Initializable {
 					newDir = (dir+1) % 4;
 				else
 					newDir = (dir+3) % 4;
-				
+
 				switch (newDir){
 				case 0:  valid = drawPath(x1 + 1, y1, 0, count + c); break;
 				case 1:  valid = drawPath(x1, y1 + 1, 1, count + c); break;
 				case 2:  valid = drawPath(x1 - 1, y1, 2, count + c); break;
 				default: valid = drawPath(x1, y1 - 1, 3, count + c); break;
 				}
-				
+
 				if(valid)
 					return true;
-				
+
 				unmarkPath(x, y, dir);
 				return false;
 			}
 		}else
 			return false;
 	}
-	
+
 	private static boolean isClear(int x, int y, int dir){
 		int a = 1;
-		
+
 		if(dir > 1)
 			a = -1;
-			
+
 		if(dir % 2 == 0){
 			for(int i = 0; i < 20; i++){
 				if(x+(i*a) < 0 || x+(i*a) > 159){
@@ -297,13 +301,13 @@ public class PathFinderController implements Initializable {
 		}
 		return true;
 	}
-	
+
 	private static int markPath(int x, int y, int dir){
 		int a = 1;
-		
+
 		if(dir > 1)
 			a = -1;
-			
+
 		if(dir % 2 == 0){
 			for(int i = 0; i < 20; i++){
 				if(x+(i*a) < 0 || x+(i*a) > 159)
@@ -321,13 +325,13 @@ public class PathFinderController implements Initializable {
 		}
 		return 20;
 	}
-	
+
 	private static void unmarkPath(int x, int y, int dir){
 		int a = 1;
-		
+
 		if(dir > 1)
 			a = -1;
-			
+
 		if(dir % 2 == 0){
 			for(int i = 0; i < 20; i++){
 				if(x+(i*a) < 0 || x+(i*a) > 159)
@@ -345,7 +349,7 @@ public class PathFinderController implements Initializable {
 		}
 		return;
 	}
-	
+
 	private static void unmarkAllPaths(){
 		for(int i = 0; i < 160; i++)
 			for(int j = 0; j < 120; j++)
@@ -354,16 +358,16 @@ public class PathFinderController implements Initializable {
 					//updateCell(i,j,true);
 				}
 	}
-	
+
 	private static void placeHardCells(){
 		int x, y;
-		
+
 		for(int a = 0; a < 8; a++){
 			x = (int) (Math.random() * 160);
 			y = (int) (Math.random() * 120);
-			
+
 			centers.add(new Point(x,y));
-			
+
 			for(int i = x-16; i < x+16 && i < 160; i++){
 				for(int j = y-16; j < y+16 && j < 120; j++){
 					if(i < 0)
@@ -376,7 +380,7 @@ public class PathFinderController implements Initializable {
 		}
 		updateGrid(0);
 	}
-	
+
 	private static void updateGrid(int mode){
 		for(int i = 0; i < 160; i++)
 			for(int j = 0; j < 120; j++){
@@ -385,37 +389,44 @@ public class PathFinderController implements Initializable {
 						updateCell(i,j);
 					continue;
 				}
+				if(mode == 2){
+					if(gridVals[i][j].route)
+						updateCell(i,j);
+					continue;
+				}
 				updateCell(i,j);
 			}
 	}
-	
+
 	private static void updateCell(int i, int j){
 		if(gridVals[i][j].route){
 			if(grid.getColor(j, i) != Color.RED)
 				grid.setCell(j, i, Color.RED);
 			return;
-		}		
+		}
 		if(gridVals[i][j].path){
 			if(grid.getColor(j, i) != Color.BLUE)
 				grid.setCell(j, i, Color.BLUE);
 			return;
 		}
 		switch(gridVals[i][j].type){
-		case 0: 
+		case 0:
 			if(grid.getColor(j, i) != Color.BLACK)
 				grid.setCell(j, i, Color.BLACK); break;
-		case 1: 
+		case 1:
 			if(grid.getColor(j, i) != Color.WHITE)
-				grid.setCell(j, i, Color.WHITE); break;		
+				grid.setCell(j, i, Color.WHITE); break;
 		case 2:
 			if(grid.getColor(j, i) != Color.GRAY)
 				grid.setCell(j, i, Color.GRAY); break;
 		}
 	}
-	
+
 	private static void initGridVals(){
 		for(int i = 0; i < 160; i++)
-			for(int j = 0; j < 120; j++)
-					gridVals[i][j] = new Cell();
+			for(int j = 0; j < 120; j++){
+					gridVals[i][j] = new Cell(i, j);
+			}
 	}
+
 }
