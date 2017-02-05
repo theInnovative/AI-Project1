@@ -1,13 +1,20 @@
 package view;
 
-import java.awt.Point;
-
 public class AStar extends HeuristicAlgorithm {
 
 	@Override
-	double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
+	void fOfNeighbor(Cell cell) {
+		cell.f = cell.g + cell.h;
+	}
 
-		return 0;
+	@Override
+	void hOfNeighbor(Cell cell) {
+		/*
+		 * heuristics not net up yet
+		 * 
+		 * 
+		 */
+		cell.h = 0;
 	}
 
 }

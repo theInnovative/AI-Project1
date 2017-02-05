@@ -5,9 +5,15 @@ import java.awt.Point;
 public class WeightedAStar extends HeuristicAlgorithm {
 
 	@Override
-	double findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
+	void fOfNeighbor(Cell cell) {
+		// TODO Auto-generated method stub
+		
+	}
 
-		return 0;
+	@Override
+	void hOfNeighbor(Cell cell) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

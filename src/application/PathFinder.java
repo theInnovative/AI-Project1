@@ -1,10 +1,5 @@
 package application;
 
-/**Main application program for photo album.
- * 
- * @author Eric Cajuste
- */
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
