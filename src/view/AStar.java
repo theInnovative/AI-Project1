@@ -11,7 +11,7 @@ package view;
 import java.util.Arrays;
 
 public class AStar extends HeuristicAlgorithm {
-	private static final int HEURISTICS = 3;
+	private static final int HEURISTICS = 4;
 	
 	public AStar(){
 		name = "AStar\t";
@@ -26,14 +26,13 @@ public class AStar extends HeuristicAlgorithm {
 	void hOfNeighbor(Cell cell) {
 		if(cell.h != null)
 			return;
-		cell.h = new double[HEURISTICS];
-		//cell.h[1] = fourWayManhattanDistance(cell);
+		cell.h = new double[HEURISTICS + 1];
+		cell.h[1] = fourWayManhattanDistance(cell);
 		cell.h[2] = euclideanDistance(cell);
-		//cell.h[3] = beelineDistance(cell);
+		cell.h[3] = beelineDistance(cell);
+		cell.h[4] = eightWayManhattanDistance(cell);
 
-		// more heuristic algorithms can be calculated
-
-		//selects the largest heuristic calculation
+		//selects a heuristic to use
 		cell.h[0] = cell.h[1];//Arrays.stream(cell.h).max().getAsDouble();
 	}
 
