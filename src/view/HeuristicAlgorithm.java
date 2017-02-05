@@ -86,9 +86,12 @@ public abstract class HeuristicAlgorithm {
 		double cost;
 
 		//unblocked move cost
-		if(diff == 1)
+		if(diff == 1){
 			cost = 1;
-		else
+			//reduced highway cost
+			if(a.path && b.path)
+				cost /= 4;
+		}else
 			cost = Math.sqrt(2);
 
 		//moving from hard to hard
@@ -97,10 +100,7 @@ public abstract class HeuristicAlgorithm {
 		//moving between unblocked and hard
 		}else if(a.type>1 || b.type>1)
 			cost *= 1.5;
-		//reduced highway cost
-		if(a.path || b.path)
-			cost /= 4;
-
+		
 		return cost;
 	}
 
