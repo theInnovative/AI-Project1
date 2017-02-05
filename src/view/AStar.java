@@ -12,6 +12,10 @@ import java.util.Arrays;
 
 public class AStar extends HeuristicAlgorithm {
 	private static final int HEURISTICS = 2;
+	
+	public AStar(){
+		name = "AStar\t";
+	}
 
 	@Override
 	void fOfNeighbor(Cell cell) {
@@ -32,7 +36,7 @@ public class AStar extends HeuristicAlgorithm {
 		//cell.h=(dx+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy);
 
 		//selects the largest heuristic calculation
-		cell.h[0] = Arrays.stream(cell.h).max().getAsDouble();
+		cell.h[0] = cell.h[1];//Arrays.stream(cell.h).max().getAsDouble();
 	}
 
 	/**

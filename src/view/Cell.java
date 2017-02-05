@@ -4,7 +4,7 @@ package view;
  * Class representation of Cell node.
  * 
  * @author Eric Cajuste
- * @author Thurgood Kipler
+ * @author Thurgood Kilper
  */
 
 import java.awt.Point;

@@ -5,10 +5,14 @@ package view;
  * an extension of the Heuristic algorithm class.
  * 
  * @author Eric Cajuste
- * @author Thurgood Kipler
+ * @author Thurgood Kilper
  */
 
 public class UniformSearch extends HeuristicAlgorithm {
+	
+	public UniformSearch(){
+		name = "Uniform";
+	}
 	
 	/**
 	 * For Uniform search f(cell) = g(cell).
