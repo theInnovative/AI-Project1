@@ -87,9 +87,7 @@ public abstract class HeuristicAlgorithm {
 		//moving between unblocked and hard
 		}else if(a.type>1 || b.type>1)
 			cost *= 1.5;
-		//reduced highway cost
-		if(a.path || b.path)
-			cost /= 4;
+
 
 		return cost;
 	}

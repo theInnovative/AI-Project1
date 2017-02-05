@@ -79,14 +79,14 @@ public class PathFinderController implements Initializable {
 
 		a = runTrials(0);
 		b = runTrials(1);
-		c = 0;//runTrials(2);
+		c = runTrials(2);
 
 		begin.setDisable(false);
 
 		label.setText("Average Costs:"
 				+ "\nUniform:\t " + a
-				+ "\nA*:\t\t" + b
-				+ "\nWeighted A*:\t" + c
+				+ "\nA*:\t " + b
+				+ "Weighted A*:\t" + c
 				);
 	}
 
@@ -112,7 +112,7 @@ public class PathFinderController implements Initializable {
 		centers = new ArrayList<Point>();
 
 		for(int i = 0; i < MAXTRIALS; i++){
-			if(x == 0){
+			if(x == -1){
 				initGridVals();
 
 				placeHardCells();
@@ -120,7 +120,7 @@ public class PathFinderController implements Initializable {
 				placeBlockedCells();
 				selectVertices();
 				updateGrid(0);
-				
+
 				printGrid(i);
 			}else
 				loadGrid(path + i + ".txt");
@@ -128,7 +128,7 @@ public class PathFinderController implements Initializable {
 			total += algorithms[x].findPath(start, goal, gridVals, grid);
 			tracePath();
 		}
-		
+
 		try {
 			Thread.sleep(2*1000);
 		} catch (InterruptedException e) {
@@ -199,7 +199,7 @@ public class PathFinderController implements Initializable {
 			} catch (IOException e){
 				e.printStackTrace();
 			}
-			
+
 			updateGrid(0);
 
 			updateCell(start.x, start.y);

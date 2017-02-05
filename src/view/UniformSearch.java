@@ -3,13 +3,13 @@ package view;
 /**
  * Class representation of the Uniform Search algorithm,
  * an extension of the Heuristic algorithm class.
- * 
+ *
  * @author Eric Cajuste
- * @author Thurgood Kipler
+ * @author Thurgood Kilper
  */
 
 public class UniformSearch extends HeuristicAlgorithm {
-	
+
 	/**
 	 * For Uniform search f(cell) = g(cell).
 	 */
@@ -24,5 +24,5 @@ public class UniformSearch extends HeuristicAlgorithm {
 	@Override
 	void hOfNeighbor(Cell cell) {
 		return;
-	}	
+	}
 }
