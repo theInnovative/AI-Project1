@@ -3,18 +3,19 @@ package view;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.PriorityQueue;
 
 public abstract class HeuristicAlgorithm {
 	double avg = 0;
-	List<Cell> closed;
+	HashSet<Cell> closed;
 	PriorityQueue<Cell> fringe;
 	Point goalpoint;
 	String name = "";
 
 	public HeuristicAlgorithm(){
-		closed = new ArrayList<Cell>();
+		closed = new HashSet<Cell>();
 		fringe = new PriorityQueue<Cell>(11,
 				(a,b) -> {if(a.f == b.f)
 							return 0;
@@ -28,7 +29,7 @@ public abstract class HeuristicAlgorithm {
 		long runtime;
 		double expanded;
 		int cellsTraveled;
-		
+
 		public String toString(){
 			return "\t" + name + ":"
 					+ "\tTotal Cost: " + totalCost
