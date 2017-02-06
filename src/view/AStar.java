@@ -14,7 +14,7 @@ public class AStar extends HeuristicAlgorithm {
 	private static final int HEURISTICS = 4;
 
 	public AStar(){
-		name = "AStar\t";
+		name = "AStar:\t";
 	}
 
 	@Override

@@ -31,7 +31,7 @@ public abstract class HeuristicAlgorithm {
 		int cellsTraveled;
 
 		public String toString(){
-			return "\t" + name + ":"
+			return "\t" + name
 					+ "\tTotal Cost: " + totalCost
 					+ "\tRuntime: " + runtime
 					+ "\tCells Traveled: " + cellsTraveled

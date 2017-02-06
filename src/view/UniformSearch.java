@@ -11,7 +11,7 @@ package view;
 public class UniformSearch extends HeuristicAlgorithm {
 	
 	public UniformSearch(){
-		name = "Uniform";
+		name = "Uniform:";
 	}
 	/**
 	 * For Uniform search f(cell) = g(cell).
