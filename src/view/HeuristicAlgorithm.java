@@ -14,6 +14,7 @@ public abstract class HeuristicAlgorithm {
 	HashSet<Cell>[] closedS;
 	Point goalpoint;
 	String name = "";
+	GridPrinter.GPStruct gps;
 
 
 	public HeuristicAlgorithm(){
@@ -27,26 +28,51 @@ public abstract class HeuristicAlgorithm {
 	}
 
 	public class Stats{
-		double totalCost;
-		long runtime;
-		double expanded;
-		int cellsTraveled;
 		long memUsed;
+
+		double totalCost = 0;
+		double runtime = 0;
+		double expanded = 0;
+		double cellsTraveled = 0;
+		double fringe = 0;
+
+		public void addStats(Stats s){
+			totalCost 		+= s.totalCost;
+			runtime 		+= s.runtime;
+			expanded		+= s.expanded;
+			cellsTraveled	+= s.cellsTraveled;
+			fringe			+= s.fringe;
+		}
+
+		public void average(int divisor){
+			totalCost 		/= divisor;
+			runtime 		/= divisor;
+			expanded		/= divisor;
+			cellsTraveled	/= divisor;
+			fringe			/= divisor;
+		}
 
 		public String toString(){
 			return "\t" + name
 					+ "\tTotal Cost: " + totalCost
-					+ "\tRuntime: " + runtime
+					+ "\tRuntime: " + runtime + "sec"
 					+ "\tCells Traveled: " + cellsTraveled
-					+ "\tExpanded: " + expanded
-					+ "\tMemory Used: " + memUsed;
+					+ "\tMemory Used: " + memUsed
+					+ "\tCells Expanded: " + expanded
+					+ "\tFringe Size: " + fringe;
 		}
 	}
 
 	abstract void fOfNeighbor(Cell cell);
 	abstract void hOfNeighbor(Cell cell);
 
-	protected Stats findPath(Point start, Point goal, Cell[][] gV, SimGUI grid) {
+	public Stats getNewStats(){
+		return new Stats();
+	}
+
+	protected Stats findPath(Point start, Point goal, Cell[][] gV, SimGUI grid,
+			GridPrinter.GPStruct gps) {
+		this.gps = gps;
 		Cell tmp = gV[start.x][start.y], tmp2;
 		List<Cell> n = null;
 		goalpoint=goal;
@@ -64,12 +90,14 @@ public abstract class HeuristicAlgorithm {
 			tmp = fringe.poll();
 			if(tmp.self.equals(goal)){
 				s.totalCost = tmp.f;
-				s.runtime = System.currentTimeMillis() - startTime;
+				s.runtime = (System.currentTimeMillis() - startTime)/1000.0;
 				s.memUsed=(closed.size() + fringe.size())*56;
 				return s;
 			}
 			closed.add(tmp);
-			//grid.setCell(tmp.self.y, tmp.self.x, Color.PINK);
+			tmp.c = Color.PINK;
+			gps.add(tmp.self, Color.PINK);
+
 			s.expanded++;
 			n = getNeighbors(tmp, gV, grid);
 			for(int i = 0; i < n.size(); i++){
@@ -144,9 +172,11 @@ public abstract class HeuristicAlgorithm {
 					continue;
 				if(tmp.type != 0){
 					neighbors.add(tmp);
-					//Color c = grid.getColor(tmp.self.y, tmp.self.x);
-					//if(c != Color.PINK && c != Color.MAGENTA)
-					//	grid.setCell(tmp.self.y, tmp.self.x, Color.MAGENTA);
+					Color c = tmp.c;
+					if(c != Color.PINK && c != Color.MAGENTA){
+						tmp.c = Color.MAGENTA;
+						gps.add(tmp.self, Color.MAGENTA);
+					}
 				}
 			}
 		}

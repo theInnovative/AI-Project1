@@ -14,7 +14,7 @@ public class WeightedAStar extends AStar {
 	/**
 	 * Weight factor used in calculating heuristic values.
 	 */
-	private double weight = 2.25;
+	public double weight;
 
 	public WeightedAStar(int h, double w){
 		super(h);
