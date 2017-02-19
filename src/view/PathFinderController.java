@@ -59,7 +59,7 @@ public class PathFinderController implements Initializable {
 		algorithms[3] = new WeightedAStar(1, 2.6);
 
 
-		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][3];
+		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][4];
 		centers = new ArrayList<Point>();
 	}
 

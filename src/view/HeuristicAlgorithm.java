@@ -28,8 +28,8 @@ public abstract class HeuristicAlgorithm {
 	}
 
 	public class Stats{
-		long memUsed;
 
+		double memUsed;
 		double totalCost = 0;
 		double runtime = 0;
 		double expanded = 0;
@@ -41,6 +41,7 @@ public abstract class HeuristicAlgorithm {
 			runtime 		+= s.runtime;
 			expanded		+= s.expanded;
 			cellsTraveled	+= s.cellsTraveled;
+			memUsed			+= s.memUsed;
 			fringe			+= s.fringe;
 		}
 
@@ -49,6 +50,7 @@ public abstract class HeuristicAlgorithm {
 			runtime 		/= divisor;
 			expanded		/= divisor;
 			cellsTraveled	/= divisor;
+			memUsed			/= divisor;
 			fringe			/= divisor;
 		}
 
