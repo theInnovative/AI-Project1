@@ -1,30 +1,30 @@
 
 
 Grid #0 Trial #0
-	Uniform:	Total Cost: 113.51219330881972	Runtime: 32789	Cells Traveled: 175	Expanded: 11786.0
-	AStar	:	Total Cost: 113.51219330881972	Runtime: 13343	Cells Traveled: 175	Expanded: 6177.0
-	W-AStar:	Total Cost: 138.58935777509507	Runtime: 6781	Cells Traveled: 152	Expanded: 2763.0
+	Uniform:	Total Cost: 113.05508652763318	Runtime: 9.624sec	Cells Traveled: 101.0	Cells Expanded: 11430.0
+	AStar:		Total Cost: 113.05508652763318	Runtime: 1.181sec	Cells Traveled: 101.0	Cells Expanded: 6509.0
+	W-AStar:	Total Cost: 122.63961030678921	Runtime: 0.1sec	Cells Traveled: 100.0	Cells Expanded: 2152.0
 
 
 Grid #1 Trial #0
-	Uniform:	Total Cost: 132.83452377915603	Runtime: 35045	Cells Traveled: 253	Expanded: 15233.0
-	AStar	:	Total Cost: 132.83452377915603	Runtime: 36451	Cells Traveled: 253	Expanded: 14111.0
-	W-AStar:	Total Cost: 149.6077560572969	Runtime: 8084	Cells Traveled: 229	Expanded: 2850.0
+	Uniform:	Total Cost: 88.75977631085023	Runtime: 3.314sec	Cells Traveled: 169.0	Cells Expanded: 9076.0
+	AStar:		Total Cost: 88.75977631085023	Runtime: 0.383sec	Cells Traveled: 169.0	Cells Expanded: 4531.0
+	W-AStar:	Total Cost: 114.58694077712556	Runtime: 0.038sec	Cells Traveled: 167.0	Cells Expanded: 1391.0
 
 
 Grid #2 Trial #0
-	Uniform:	Total Cost: 101.25977631085023	Runtime: 31391	Cells Traveled: 249	Expanded: 12983.0
-	AStar	:	Total Cost: 101.25977631085023	Runtime: 16629	Cells Traveled: 249	Expanded: 7519.0
-	W-AStar:	Total Cost: 134.05256121069144	Runtime: 6002	Cells Traveled: 119	Expanded: 2311.0
+	Uniform:	Total Cost: 120.64823227814078	Runtime: 6.478sec	Cells Traveled: 234.0	Cells Expanded: 15306.0
+	AStar:		Total Cost: 120.64823227814078	Runtime: 7.228sec	Cells Traveled: 234.0	Cells Expanded: 14498.0
+	W-AStar:	Total Cost: 168.8368324581534	Runtime: 1.879sec	Cells Traveled: 173.0	Cells Expanded: 5969.0
 
 
 Grid #3 Trial #0
-	Uniform:	Total Cost: 86.31370849898474	Runtime: 23782	Cells Traveled: 221	Expanded: 10490.0
-	AStar	:	Total Cost: 86.31370849898474	Runtime: 13317	Cells Traveled: 221	Expanded: 5864.0
-	W-AStar:	Total Cost: 99.3406204335659	Runtime: 2608	Cells Traveled: 205	Expanded: 901.0
+	Uniform:	Total Cost: 82.72424240491749	Runtime: 1.994sec	Cells Traveled: 134.0	Cells Expanded: 7240.0
+	AStar:		Total Cost: 82.72424240491749	Runtime: 0.33sec	Cells Traveled: 134.0	Cells Expanded: 4034.0
+	W-AStar:	Total Cost: 104.54404755831214	Runtime: 0.08sec	Cells Traveled: 113.0	Cells Expanded: 1996.0
 
 
 Grid #4 Trial #0
-	Uniform:	Total Cost: 108.61269837220804	Runtime: 34010	Cells Traveled: 187	Expanded: 14386.0
-	AStar	:	Total Cost: 108.61269837220804	Runtime: 19137	Cells Traveled: 187	Expanded: 8514.0
-	W-AStar:	Total Cost: 132.79278489984122	Runtime: 6823	Cells Traveled: 159	Expanded: 2661.0
+	Uniform:	Total Cost: 146.9632034355964	Runtime: 5.49sec	Cells Traveled: 248.0	Cells Expanded: 15047.0
+	AStar:		Total Cost: 146.9632034355964	Runtime: 5.945sec	Cells Traveled: 248.0	Cells Expanded: 13167.0
+	W-AStar:	Total Cost: 202.5292206135788	Runtime: 1.38sec	Cells Traveled: 193.0	Cells Expanded: 7618.0

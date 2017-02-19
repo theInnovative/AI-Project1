@@ -24,13 +24,18 @@ public class PathFinderController implements Initializable {
 	private static SimGUI grid;
 	private static Cell[][] gridVals;
 	private static Point start, goal;
-	private final static int MAXTRIALS = 1;
+	private final static int MAXTRIALS = 10;
 	private final static int MAXGRIDS = 5;
 	private final static String path = "Trial Grids\\Grid-";
 	private final static String path2 = "Trial Grids\\CompleteStats.txt";
+	private final static String path3 = "Trial Grids\\AverageStats.txt";
 	private static List<Point> centers;
 	private static HeuristicAlgorithm[] algorithms;
 	private static HeuristicAlgorithm.Stats[][][] allStats;
+	private static HeuristicAlgorithm.Stats[] averages = new HeuristicAlgorithm.Stats[3];
+	public GridPrinter printer;
+	private Thread thread;
+	private GridPrinter.GPStruct[] db;
 
 	@FXML
 	protected Button begin;
@@ -39,9 +44,11 @@ public class PathFinderController implements Initializable {
 	@FXML
 	protected Button browse;
 	@FXML
-	protected Label label;
-	@FXML
 	protected TextField pathname;
+	@FXML
+	protected TextField weight;
+	@FXML
+	protected Label label;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -51,48 +58,100 @@ public class PathFinderController implements Initializable {
 		algorithms[2] = new WeightedAStar();
 
 		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][3];
-
-		/*for(int i = 0; i < grid.buttons.length; i++){
-			for(int j = 0; j < grid.buttons[0].length; j++){
-				grid.buttons[i][j].addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent e) {
-
-						displayInfo();
-					}
-				});
-			}
-		}*/
-
-	}
-
-	public void displayInfo(){
-		//label.setText(value);
+		centers = new ArrayList<Point>();
 	}
 
 	public void start() throws InterruptedException, IOException{
-		begin.setDisable(true);
 		System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+		String input = weight.getText();
+		double val;
+		
+		if(input.equals("")){
+			weight.clear();
+			label.setText("Enter a value for weight.");
+			return;
+		}
+		
+		try{
+			val = Double.parseDouble(input);
+		}catch(NumberFormatException e){
+			weight.clear();
+			label.setText("Enter a valid value for weight.");
+			return;
+		}
+		
+		if(val < 1){
+			weight.clear();
+			label.setText("Enter a value >= 1.");
+			return;
+		}
+		
+		((WeightedAStar)algorithms[2]).weight = val;
+		
+		label.setText("");
+		begin.setDisable(true);
 
 		if(grid == null)
-			grid = new SimGUI (160, 120);
-
+			grid = new SimGUI (160, 120, this);
 
 		runTrials();
+		storeAverageStats();
 
 		begin.setDisable(false);
+	}
+	
+	private void storeAverageStats() throws IOException{
+		String line;
+		int totaltrials = MAXTRIALS * MAXGRIDS;
+		FileWriter file = new FileWriter(path3, false);
 
-		label.setText("Average Costs:"
-
-				+ "\nUniform:\t "
-				+ "\nA*:\t\t"
-				+ "\nWeighted A*:\t"
-				);
+		averages[0].average(totaltrials);
+		averages[1].average(totaltrials);
+		averages[2].average(totaltrials);		
+		
+		line = "Algorithm Average Stats";
+		file.write(line, 0, line.length());
+		file.write(System.getProperty("line.separator"));
+		line = averages[0].toString();
+		file.write(line, 0, line.length());
+		file.write(System.getProperty("line.separator"));
+		line = averages[1].toString();
+		file.write(line, 0, line.length());
+		file.write(System.getProperty("line.separator"));
+		line = averages[2].toString();
+		file.write(line, 0, line.length());
+		file.write(System.getProperty("line.separator"));
+		
+		file.close();
+	}
+	
+	private static void storeStats(String info) throws IOException{
+		FileWriter file = new FileWriter(path2, true);
+		file.write(info, 0, info.length());
+		file.write(System.getProperty("line.separator"));
+		file.close();
 	}
 
 	public void load(){
 		String line = pathname.getText();
 		loadGrid(line);
+		
+		db = new GridPrinter.GPStruct[1];
+		db[0] = new GridPrinter.GPStruct(gridVals);
+		printer = new GridPrinter(db, grid);
+		thread = new Thread(printer);
+		thread.start();
+		
+		
+		GridPrinter.GPStruct gps = printer.db[0];
+		algorithms[1].findPath(start, goal, gridVals, grid, gps);
+		tracePath(gps);
+		grid.setVals(gridVals);
+		
+		gps.ready = true;
+		synchronized (printer){
+			printer.notify();
+		}
 	}
 
 	public void browse(){
@@ -105,22 +164,32 @@ public class PathFinderController implements Initializable {
         }
 	}
 
-	private static void runTrials() throws InterruptedException, IOException{
+	private void runTrials() throws InterruptedException, IOException{
 		gridVals = new Cell[160][120];
-		centers = new ArrayList<Point>();
+		centers.clear();
 		String line = "";
+		
+		db = new GridPrinter.GPStruct[MAXGRIDS * MAXTRIALS * 3];
+		printer = new GridPrinter(db, grid);
+		thread = new Thread(printer);
+		thread.start();
+		
+		averages[0] = new UniformSearch().getNewStats();
+		averages[1] = new AStar().getNewStats();
+		averages[2] = new WeightedAStar().getNewStats();
 		
 		FileWriter file = new FileWriter(path2, false);
 		file.close();
-		file =  new FileWriter(path2, true);
-
+		
 		for(int i = 0; i < MAXGRIDS; i++){
 			for(int j = 0; j < MAXTRIALS; j++){
 				centers.clear();
-
+				
+				file =  new FileWriter(path2, true);
 				line = "\n\nGrid #" + i + " Trial #" + j;
 				file.write(line, 0, line.length());
 				file.write(System.getProperty("line.separator"));
+				file.close();
 				
 				if(j == 0){
 					initGridVals();
@@ -131,56 +200,63 @@ public class PathFinderController implements Initializable {
 					loadGrid(path + i + "-" + '0' + ".txt");
 
 				selectVertices();
-				updateGrid(0);
+				//updateGrid();
 				printGrid(i, j);
+				Cell[][] tmp = copyGrid();
 				
-				allStats[i][j][0] = algorithms[0].findPath(start, goal, gridVals, grid);
-				allStats[i][j][0].cellsTraveled = tracePath();
-				line = allStats[i][j][0].toString();
-				file.write(line, 0, line.length());
-				file.write(System.getProperty("line.separator"));
-				file.close();
-				file = new FileWriter(path2, true);
-				Thread.sleep(2*1000);
+				db[(i*MAXTRIALS+j)*3    ] = new GridPrinter.GPStruct(tmp);
+				runAlgorithm(0, i, j, db[(i*MAXTRIALS+j)*3    ]);
 
 				loadGrid(path + i + "-" + j +".txt");
-				allStats[i][j][1] = algorithms[1].findPath(start, goal, gridVals, grid);
-				allStats[i][j][1].cellsTraveled = tracePath();
-				line = allStats[i][j][1].toString();
-				file.write(line, 0, line.length());
-				file.write(System.getProperty("line.separator"));
-				file.close();
-				file = new FileWriter(path2, true);
-				Thread.sleep(2*1000);
+				db[(i*MAXTRIALS+j)*3 + 1] = new GridPrinter.GPStruct(tmp);
+				runAlgorithm(1, i, j, db[(i*MAXTRIALS+j)*3 + 1]);
 
 				loadGrid(path + i +  "-" + j +".txt");
-				allStats[i][j][2] = algorithms[2].findPath(start, goal, gridVals, grid);
-				allStats[i][j][2].cellsTraveled = tracePath();
-				line = allStats[i][j][2].toString();
-				file.write(line, 0, line.length());
-				file.write(System.getProperty("line.separator"));
-				file.close();
-				file = new FileWriter(path2, true);
-				Thread.sleep(2*1000);
+				db[(i*MAXTRIALS+j)*3 + 2] = new GridPrinter.GPStruct(tmp);
+				runAlgorithm(2, i, j, db[(i*MAXTRIALS+j)*3 + 2]);
 
 			}
-
 		}
-		file.close();
+	}
+	
+	private Cell[][] copyGrid(){
+		Cell[][] newGrid = new Cell[160][120];
+		
+		for(int i = 0; i < 160; i++){
+			for(int j = 0; j < 120; j++){
+				newGrid[i][j] = gridVals[i][j].copy();
+			}
+		}	
+		return newGrid;
 	}
 
+	private void runAlgorithm(int index, int i, int j, GridPrinter.GPStruct gps) 
+			throws IOException{
+		allStats[i][j][index] = algorithms[index].findPath(start, goal, gridVals, grid, gps);
+		allStats[i][j][index].cellsTraveled = tracePath(gps);
+		gps.ready = true;
+		
+		synchronized (printer){
+			printer.notify();
+		}
+		
+		averages[index].addStats(allStats[i][j][index]);
+		storeStats(allStats[i][j][index].toString());
+	}
 
-	private static void loadGrid(String name){
+	private void loadGrid(String name){
 		String line, pts[];
 		File file = new File(name);
 		centers.clear();
-
+		
+		
 		if(file.exists()){
 			try {
 				BufferedReader reader = new BufferedReader(new FileReader(file));
 
-				if(grid == null)
-					grid = new SimGUI(160, 120);
+				if(grid == null){
+					grid = new SimGUI(160, 120, this);
+				}
 				gridVals = new Cell[160][120];
 
 				line = reader.readLine().substring(1);
@@ -228,36 +304,18 @@ public class PathFinderController implements Initializable {
 							gridVals[j][i].type = 0;
 							break;
 						}
-						//updateCell(j,i);
 						line = line.substring(1);
 					}
 					line = reader.readLine();
 				}
 
 				reader.close();
-				//updateGrid(0);
 			} catch (IOException e){
 				e.printStackTrace();
 			}
 
-			updateGrid(0);
+			db[0].gV = copyGrid();
 		}
-	}
-
-	private static int tracePath(){
-		Cell tmp = gridVals[goal.x][goal.y];
-		int count = 0;
-		
-		if(tmp.parent != null){
-			do{
-				tmp.route = true;
-				updateCell(tmp.self.x,tmp.self.y);
-				tmp = tmp.parent;
-				count++;
-			}while(!tmp.self.equals(start));
-		}
-		
-		return count;
 	}
 
 	private static void printGrid(int count, int count2){
@@ -316,7 +374,6 @@ public class PathFinderController implements Initializable {
 				valid = true;
 				start = new Point(x,y);
 				gridVals[x][y].route = true;
-				updateCell(x,y);
 			}
 		}
 
@@ -337,10 +394,26 @@ public class PathFinderController implements Initializable {
 					valid = true;
 					goal = new Point(x,y);
 					gridVals[x][y].route = true;
-					updateCell(x,y);
 				}
 			}
 		}
+	}
+	
+	private static int tracePath(GridPrinter.GPStruct gps){
+		Cell tmp = gridVals[goal.x][goal.y];
+		int count = 0;
+		
+		if(tmp.parent != null){
+			do{
+				tmp.route = true;
+				//updateCell(tmp.self.x,tmp.self.y);
+				gps.add(new Point(tmp.self.x, tmp.self.y), Color.RED);
+				tmp = tmp.parent;
+				count++;
+			}while(!tmp.self.equals(start));
+		}
+		
+		return count;
 	}
 
 	private static void  placeBlockedCells(){
@@ -354,7 +427,6 @@ public class PathFinderController implements Initializable {
 				i--;
 			else{
 				gridVals[x][y].type = 0;
-				//updateCell(x,y);
 			}
 		}
 	}
@@ -380,8 +452,6 @@ public class PathFinderController implements Initializable {
 				i++;
 			}
 		}
-
-		//updateGrid(1);
 		return true;
 	}
 
@@ -467,14 +537,12 @@ public class PathFinderController implements Initializable {
 				if(x+(i*a) < 0 || x+(i*a) > 159)
 					return i;
 				gridVals[x+(i*a)][y].path = true;
-				//updateCell(x+(i*a),y,true);
 			}
 		}else{
 			for(int i = 0; i < 20; i++){
 				if(y+(i*a) < 0 || y+(i*a) > 119)
 					return i;
 				gridVals[x][y+(i*a)].path = true;
-				//updateCell(x,y+(i*a),true);
 			}
 		}
 		return 20;
@@ -491,14 +559,12 @@ public class PathFinderController implements Initializable {
 				if(x+(i*a) < 0 || x+(i*a) > 159)
 					return;
 				gridVals[x+(i*a)][y].path = false;
-				//updateCell(x+(i*a),y);
 			}
 		}else{
 			for(int i = 0; i < 20; i++){
 				if(y+(i*a) < 0 || y+(i*a) > 119)
 					return;
 				gridVals[x][y+(i*a)].path = false;
-				//updateCell(x,y+(i*a));
 			}
 		}
 		return;
@@ -509,7 +575,6 @@ public class PathFinderController implements Initializable {
 			for(int j = 0; j < 120; j++)
 				if(gridVals[i][j].path){
 					gridVals[i][j].path = false;
-					//updateCell(i,j,true);
 				}
 	}
 
@@ -528,51 +593,11 @@ public class PathFinderController implements Initializable {
 						break;
 					else if(j < 0)
 						continue;
-					gridVals[i][j].type = (short)(2*Math.random() + 1);
+					
+					if(Math.random() > .5)
+						gridVals[i][j].type = 2;
 				}
 			}
-		}
-		//updateGrid(0);
-	}
-
-	private static void updateGrid(int mode){
-		for(int i = 0; i < 160; i++)
-			for(int j = 0; j < 120; j++){
-				if(mode == 1){
-					if(gridVals[i][j].path)
-						updateCell(i,j);
-					continue;
-				}
-				if(mode == 2){
-					if(gridVals[i][j].route)
-						updateCell(i,j);
-					continue;
-				}
-				updateCell(i,j);
-			}
-	}
-
-	private static void updateCell(int i, int j){
-		if(gridVals[i][j].route){
-			if(grid.getColor(j, i) != Color.RED)
-				grid.setCell(j, i, Color.RED);
-			return;
-		}
-		if(gridVals[i][j].path){
-			if(grid.getColor(j, i) != Color.BLUE)
-				grid.setCell(j, i, Color.BLUE);
-			return;
-		}
-		switch(gridVals[i][j].type){
-		case 0:
-			if(grid.getColor(j, i) != Color.BLACK)
-				grid.setCell(j, i, Color.BLACK); break;
-		case 1:
-			if(grid.getColor(j, i) != Color.WHITE)
-				grid.setCell(j, i, Color.WHITE); break;
-		case 2:
-			if(grid.getColor(j, i) != Color.GRAY)
-				grid.setCell(j, i, Color.GRAY); break;
 		}
 	}
 
