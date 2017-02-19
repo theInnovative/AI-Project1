@@ -10,8 +10,11 @@ import java.util.PriorityQueue;
 public abstract class HeuristicAlgorithm {
 	HashSet<Cell> closed;
 	PriorityQueue<Cell> fringe;
+	PriorityQueue<Cell>[] openS;
+	HashSet<Cell>[] closedS;
 	Point goalpoint;
 	String name = "";
+
 
 	public HeuristicAlgorithm(){
 		closed = new HashSet<Cell>();
@@ -151,4 +154,78 @@ public abstract class HeuristicAlgorithm {
 		return neighbors;
 	}
 
+	protected void expandState(Cell s, int i, Cell[][] gV, SimGUI grid){
+		openS[i].remove(s);
+		List<Cell> n = null;
+		Cell tmp;
+		n = getNeighbors(s, gV, grid);
+		for(int j = 0; j < n.size(); j++){
+			tmp = n.get(j);
+			double cost = s.g + cost(s, tmp);
+			if(!closedS[i].contains(tmp)){
+				tmp.g=Double.POSITIVE_INFINITY;
+			}
+			if(tmp.g > cost){
+				tmp.g=cost;
+				tmp.parent=s;
+				if(!closedS[i].contains(tmp)){
+					key(tmp, i);
+					openS[i].add(tmp);
+				}
+			}
+		}
+	}
+
+	//phase 2 sequential heuristic algorithm
+	protected void sequentialPath(Point start, Point goal, Cell[][] gV, SimGUI grid){
+		goalpoint=goal;
+		Cell tmp = gV[start.x][start.y];
+		gV[goal.x][goal.y].g=Double.POSITIVE_INFINITY;
+		for(int i=0; i<5; i++){
+			openS[i] = new PriorityQueue<Cell>(11,
+					(a,b) -> {if(a.key == b.f)
+						return 0;
+					else if(a.key < b.key)
+						return -1;
+					return 1;});
+			closedS[i] =  new HashSet<Cell>();
+			tmp.g = 0;
+			tmp.parent = tmp;
+			openS[i].clear();
+			openS[i].add(tmp);
+			closedS[i].clear();
+		}
+		while(openS[0].poll().key<Double.POSITIVE_INFINITY){
+			for(int i=1; i<5; i++){
+				if(openS[i].poll().key<=openS[0].poll().key){
+					if(gV[goal.x][goal.y].g<openS[i].poll().key){
+						if(gV[goal.x][goal.y].g<Double.POSITIVE_INFINITY){
+							return;
+						}
+					}else{
+						tmp = openS[i].poll();
+						expandState(tmp, i, gV, grid);
+						closedS[i].add(tmp);
+					}
+				}else{
+					if(gV[goal.x][goal.y].g<openS[0].poll().key){
+						if(gV[goal.x][goal.y].g<Double.POSITIVE_INFINITY){
+							return;
+						}
+					}else{
+						tmp = openS[0].poll();
+						expandState(tmp, 0, gV, grid);
+						closedS[0].add(tmp);
+					}
+
+				}
+
+			}
+		}
+
+	}
+	void key(Cell s, int i) {
+		// override with AStar
+
+	}
 }

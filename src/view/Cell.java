@@ -11,7 +11,7 @@ import java.awt.Point;
 
 public class Cell {
 	//each cell uses 56 bytes of memory
-	
+
 	/**
 	 * blocked 	= type 0
 	 * open  	= type 1
@@ -24,10 +24,7 @@ public class Cell {
 	 * g = cost to move to neighbor cell
 	 * h = estimated distance from cell to goal
 	 */
-	double f, g;
-
-
-	double h;
+	double f, g, h, key;
 	boolean path = false, route = false;
 	Point self = null;
 	Cell parent;

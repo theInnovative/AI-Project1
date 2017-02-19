@@ -14,10 +14,13 @@ public class WeightedAStar extends AStar {
 	/**
 	 * Weight factor used in calculating heuristic values.
 	 */
-	private final double weight = 2.25;
+	private double weight = 2.25;
 
-	public WeightedAStar(){
-		name = "W-AStar:";
+	public WeightedAStar(int h, double w){
+		super(h);
+		this.heuristic=super.heuristic;
+		this.weight=w;
+		name = "W-AStar ("+weight+"):";
 	}
 
 	/**

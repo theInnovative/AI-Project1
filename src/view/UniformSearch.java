@@ -9,7 +9,7 @@ package view;
  */
 
 public class UniformSearch extends HeuristicAlgorithm {
-	
+
 	public UniformSearch(){
 		name = "Uniform:";
 	}

@@ -1,5 +1,7 @@
 package view;
 
+import java.util.List;
+
 /**
  * Class representation of the A* algorithm,
  * extending the Heuristic Algorithm class.
@@ -11,8 +13,11 @@ package view;
 
 public class AStar extends HeuristicAlgorithm {
 
-	public AStar(){
-		name = "AStar:\t";
+	int heuristic = 0;
+
+	public AStar(int h){
+		this.heuristic=h;
+		name = "AStar:("+h+"):";
 	}
 
 	@Override
@@ -26,8 +31,29 @@ public class AStar extends HeuristicAlgorithm {
 		cell.h = euclideanDistance(cell);
 
 		//tie breaker
-		//cell.h[0]*=(1.0+0.25/300);
+		//cell.h*=(1.0+0.25/300);
 	}
+
+	@Override
+	void key(Cell s, int i){
+		switch(i){
+			case 0:	s.key = eightWayManhattanDistance(s);
+					break;
+			case 1:	s.key = euclideanDistance(s);
+					break;
+			case 2: s.key = beelineDistance(s);
+					break;
+			case 3:
+			case 4:
+			case 5:
+			default:s.key = eightWayManhattanDistance(s);
+					break;
+		}
+		s.key += s.g;
+		return;
+	}
+
+
 
 	/**
 	 * Calculates the Manhattan distance from cell to the target cell

@@ -45,12 +45,13 @@ public class PathFinderController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		algorithms = new HeuristicAlgorithm[3];
+		algorithms = new HeuristicAlgorithm[4];
 		algorithms[0] = new UniformSearch();
-		algorithms[1] = new AStar();
-		algorithms[2] = new WeightedAStar();
+		algorithms[1] = new AStar(1);
+		algorithms[2] = new WeightedAStar(1, 1.3);
+		algorithms[3] = new WeightedAStar(1, 2.6);
 
-		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][3];
+		allStats = new HeuristicAlgorithm.Stats[MAXGRIDS][MAXTRIALS][4];
 
 		/*for(int i = 0; i < grid.buttons.length; i++){
 			for(int j = 0; j < grid.buttons[0].length; j++){
@@ -109,7 +110,7 @@ public class PathFinderController implements Initializable {
 		gridVals = new Cell[160][120];
 		centers = new ArrayList<Point>();
 		String line = "";
-		
+
 		FileWriter file = new FileWriter(path2, false);
 		file.close();
 		file =  new FileWriter(path2, true);
@@ -121,7 +122,7 @@ public class PathFinderController implements Initializable {
 				line = "\n\nGrid #" + i + " Trial #" + j;
 				file.write(line, 0, line.length());
 				file.write(System.getProperty("line.separator"));
-				
+
 				if(j == 0){
 					initGridVals();
 					placeHardCells();
@@ -133,7 +134,7 @@ public class PathFinderController implements Initializable {
 				selectVertices();
 				updateGrid(0);
 				printGrid(i, j);
-				
+
 				allStats[i][j][0] = algorithms[0].findPath(start, goal, gridVals, grid);
 				allStats[i][j][0].cellsTraveled = tracePath();
 				line = allStats[i][j][0].toString();
@@ -157,6 +158,16 @@ public class PathFinderController implements Initializable {
 				allStats[i][j][2] = algorithms[2].findPath(start, goal, gridVals, grid);
 				allStats[i][j][2].cellsTraveled = tracePath();
 				line = allStats[i][j][2].toString();
+				file.write(line, 0, line.length());
+				file.write(System.getProperty("line.separator"));
+				file.close();
+				file = new FileWriter(path2, true);
+				Thread.sleep(2*1000);
+
+				loadGrid(path + i +  "-" + j +".txt");
+				allStats[i][j][3] = algorithms[3].findPath(start, goal, gridVals, grid);
+				allStats[i][j][3].cellsTraveled = tracePath();
+				line = allStats[i][j][3].toString();
 				file.write(line, 0, line.length());
 				file.write(System.getProperty("line.separator"));
 				file.close();
@@ -188,8 +199,8 @@ public class PathFinderController implements Initializable {
 				start = new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1]));
 				gridVals[start.x][start.y] = new Cell(start.x, start.y);
 				gridVals[start.x][start.y].route = true;
-				
-				
+
+
 				line = reader.readLine().substring(1);
 				pts = line.substring(0, line.length()-1).split(",");
 				goal = new Point(Integer.parseInt(pts[0]),Integer.parseInt(pts[1]));
@@ -247,7 +258,7 @@ public class PathFinderController implements Initializable {
 	private static int tracePath(){
 		Cell tmp = gridVals[goal.x][goal.y];
 		int count = 0;
-		
+
 		if(tmp.parent != null){
 			do{
 				tmp.route = true;
@@ -256,7 +267,7 @@ public class PathFinderController implements Initializable {
 				count++;
 			}while(!tmp.self.equals(start));
 		}
-		
+
 		return count;
 	}
 
