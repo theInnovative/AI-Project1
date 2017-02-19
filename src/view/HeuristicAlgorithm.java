@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public abstract class HeuristicAlgorithm {
-	double avg = 0;
 	HashSet<Cell> closed;
 	PriorityQueue<Cell> fringe;
 	Point goalpoint;
@@ -29,13 +28,15 @@ public abstract class HeuristicAlgorithm {
 		long runtime;
 		double expanded;
 		int cellsTraveled;
+		long memUsed;
 
 		public String toString(){
 			return "\t" + name
 					+ "\tTotal Cost: " + totalCost
 					+ "\tRuntime: " + runtime
 					+ "\tCells Traveled: " + cellsTraveled
-					+ "\tExpanded: " + expanded;
+					+ "\tExpanded: " + expanded
+					+ "\tMemory Used: " + memUsed;
 		}
 	}
 
@@ -61,10 +62,11 @@ public abstract class HeuristicAlgorithm {
 			if(tmp.self.equals(goal)){
 				s.totalCost = tmp.f;
 				s.runtime = System.currentTimeMillis() - startTime;
+				s.memUsed=(closed.size() + fringe.size())*56;
 				return s;
 			}
 			closed.add(tmp);
-			grid.setCell(tmp.self.y, tmp.self.x, Color.PINK);
+			//grid.setCell(tmp.self.y, tmp.self.x, Color.PINK);
 			s.expanded++;
 			n = getNeighbors(tmp, gV, grid);
 			for(int i = 0; i < n.size(); i++){
@@ -139,9 +141,9 @@ public abstract class HeuristicAlgorithm {
 					continue;
 				if(tmp.type != 0){
 					neighbors.add(tmp);
-					Color c = grid.getColor(tmp.self.y, tmp.self.x);
-					if(c != Color.PINK && c != Color.MAGENTA)
-						grid.setCell(tmp.self.y, tmp.self.x, Color.MAGENTA);
+					//Color c = grid.getColor(tmp.self.y, tmp.self.x);
+					//if(c != Color.PINK && c != Color.MAGENTA)
+					//	grid.setCell(tmp.self.y, tmp.self.x, Color.MAGENTA);
 				}
 			}
 		}

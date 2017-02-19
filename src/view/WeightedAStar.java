@@ -14,7 +14,7 @@ public class WeightedAStar extends AStar {
 	/**
 	 * Weight factor used in calculating heuristic values.
 	 */
-	private final double weight = 2;
+	private final double weight = 2.25;
 
 	public WeightedAStar(){
 		name = "W-AStar:";
@@ -27,7 +27,7 @@ public class WeightedAStar extends AStar {
 	@Override
 	void hOfNeighbor(Cell cell) {
 		super.hOfNeighbor(cell);
-		cell.h[0] *= weight;
+		cell.h *= weight;
 	}
 
 }
