@@ -35,15 +35,12 @@ public class PathFinderController implements Initializable {
 	private static HeuristicAlgorithm.Stats[][][] allStats;
 	private static HeuristicAlgorithm.Stats[] averages = new HeuristicAlgorithm.Stats[4];
 	public GridPrinter printer;
-	private Thread thread;
 	private GridPrinter.GPStruct[] db;
 
 	@FXML
 	protected Button begin;
 	@FXML
 	protected Button load;
-	@FXML
-	protected Button browse;
 	@FXML
 	protected TextField pathname;
 	@FXML
