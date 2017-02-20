@@ -31,7 +31,7 @@ public class AStar extends HeuristicAlgorithm {
 		case 1:	cell.h = euclideanDistance(cell); return;
 		case 2:	cell.h = eightWayManhattanDistance(cell); return;
 		case 3:	cell.h = beelineDistance(cell); return;
-		default:
+		default: cell.h = widescaleDistance(cell);
 		}
 
 		//tie breaker
