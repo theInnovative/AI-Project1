@@ -1,3 +1,4 @@
-	Uniform:	Total Cost: 110.43010819142762	Runtime: 5.38sec	Cells Traveled: 177.2	Cells Expanded: 11619.8
-	AStar:		Total Cost: 110.43010819142762	Runtime: 3.0134sec	Cells Traveled: 177.2	Cells Expanded: 8547.8
-	W-AStar:	Total Cost: 142.62733034279182	Runtime: 0.6954sec	Cells Traveled: 149.2	Cells Expanded: 3825.2
+Algorithm Average Stats
+	Uniform:	Total Cost: 119.73627484959133	Runtime: 5.669140000000001sec	Cells Traveled: 182.02	Cells Expanded: 12823.36	Fringe Size: 0.0
+	AStar:		Total Cost: 119.73627484959133	Runtime: 3.6464200000000004sec	Cells Traveled: 182.02	Cells Expanded: 9851.78	Fringe Size: 0.0
+	W-AStar:	Total Cost: 137.89533107342123	Runtime: 0.44481999999999994sec	Cells Traveled: 148.88	Cells Expanded: 3306.82	Fringe Size: 0.0

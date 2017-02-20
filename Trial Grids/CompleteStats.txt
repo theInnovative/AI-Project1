@@ -1,30 +1,141 @@
 
 
 Grid #0 Trial #0
-	Uniform:	Total Cost: 113.05508652763318	Runtime: 9.624sec	Cells Traveled: 101.0	Cells Expanded: 11430.0
-	AStar:		Total Cost: 113.05508652763318	Runtime: 1.181sec	Cells Traveled: 101.0	Cells Expanded: 6509.0
-	W-AStar:	Total Cost: 122.63961030678921	Runtime: 0.1sec	Cells Traveled: 100.0	Cells Expanded: 2152.0
+	Uniform:	Total Cost: 106.52691193458115	Runtime: 2.832sec	Cells Traveled: 162.0	Cells Expanded: 12830.0	Fringe Size: 0.0
+	AStar:		Total Cost: 106.52691193458115	Runtime: 2.05sec	Cells Traveled: 162.0	Cells Expanded: 7085.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 115.39696961966995	Runtime: 0.224sec	Cells Traveled: 154.0	Cells Expanded: 1727.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #1
+	Uniform:	Total Cost: 117.06980515339458	Runtime: 7.843sec	Cells Traveled: 220.0	Cells Expanded: 14550.0	Fringe Size: 0.0
+	AStar:		Total Cost: 117.06980515339458	Runtime: 5.39sec	Cells Traveled: 220.0	Cells Expanded: 11696.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 133.5819984622143	Runtime: 0.352sec	Cells Traveled: 199.0	Cells Expanded: 3901.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #2
+	Uniform:	Total Cost: 62.15685424949237	Runtime: 1.334sec	Cells Traveled: 165.0	Cells Expanded: 7836.0	Fringe Size: 0.0
+	AStar:		Total Cost: 62.15685424949237	Runtime: 0.149sec	Cells Traveled: 165.0	Cells Expanded: 2971.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 74.55634918610403	Runtime: 0.004sec	Cells Traveled: 164.0	Cells Expanded: 389.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #3
+	Uniform:	Total Cost: 59.242640687119284	Runtime: 0.661sec	Cells Traveled: 164.0	Cells Expanded: 5939.0	Fringe Size: 0.0
+	AStar:		Total Cost: 59.242640687119284	Runtime: 0.068sec	Cells Traveled: 164.0	Cells Expanded: 2152.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 67.80634918610403	Runtime: 0.002sec	Cells Traveled: 152.0	Cells Expanded: 288.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #4
+	Uniform:	Total Cost: 59.328427124746185	Runtime: 1.555sec	Cells Traveled: 151.0	Cells Expanded: 6786.0	Fringe Size: 0.0
+	AStar:		Total Cost: 59.328427124746185	Runtime: 0.506sec	Cells Traveled: 151.0	Cells Expanded: 3027.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 61.29898987322329	Runtime: 0.004sec	Cells Traveled: 139.0	Cells Expanded: 194.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #5
+	Uniform:	Total Cost: 94.31370849898475	Runtime: 6.319sec	Cells Traveled: 260.0	Cells Expanded: 12964.0	Fringe Size: 0.0
+	AStar:		Total Cost: 94.31370849898475	Runtime: 1.683sec	Cells Traveled: 260.0	Cells Expanded: 6974.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 148.83935777509512	Runtime: 1.803sec	Cells Traveled: 253.0	Cells Expanded: 7722.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #6
+	Uniform:	Total Cost: 90.0882034355964	Runtime: 4.777sec	Cells Traveled: 154.0	Cells Expanded: 12618.0	Fringe Size: 0.0
+	AStar:		Total Cost: 90.0882034355964	Runtime: 0.73sec	Cells Traveled: 154.0	Cells Expanded: 5881.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 112.74011537017755	Runtime: 0.145sec	Cells Traveled: 109.0	Cells Expanded: 2242.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #7
+	Uniform:	Total Cost: 63.24264068711928	Runtime: 2.375sec	Cells Traveled: 168.0	Cells Expanded: 7039.0	Fringe Size: 0.0
+	AStar:		Total Cost: 63.24264068711928	Runtime: 0.4sec	Cells Traveled: 168.0	Cells Expanded: 2719.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 88.36269837220807	Runtime: 0.036sec	Cells Traveled: 153.0	Cells Expanded: 739.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #8
+	Uniform:	Total Cost: 77.41421356237309	Runtime: 2.324sec	Cells Traveled: 237.0	Cells Expanded: 9415.0	Fringe Size: 0.0
+	AStar:		Total Cost: 77.41421356237309	Runtime: 0.149sec	Cells Traveled: 237.0	Cells Expanded: 2671.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 88.88477631085021	Runtime: 0.004sec	Cells Traveled: 233.0	Cells Expanded: 323.0	Fringe Size: 0.0
+
+
+Grid #0 Trial #9
+	Uniform:	Total Cost: 33.242640687119284	Runtime: 0.261sec	Cells Traveled: 102.0	Cells Expanded: 3955.0	Fringe Size: 0.0
+	AStar:		Total Cost: 33.242640687119284	Runtime: 0.018sec	Cells Traveled: 102.0	Cells Expanded: 911.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 33.242640687119284	Runtime: 0.0sec	Cells Traveled: 102.0	Cells Expanded: 106.0	Fringe Size: 0.0
 
 
 Grid #1 Trial #0
-	Uniform:	Total Cost: 88.75977631085023	Runtime: 3.314sec	Cells Traveled: 169.0	Cells Expanded: 9076.0
-	AStar:		Total Cost: 88.75977631085023	Runtime: 0.383sec	Cells Traveled: 169.0	Cells Expanded: 4531.0
-	W-AStar:	Total Cost: 114.58694077712556	Runtime: 0.038sec	Cells Traveled: 167.0	Cells Expanded: 1391.0
+	Uniform:	Total Cost: 104.05634918610403	Runtime: 5.379sec	Cells Traveled: 237.0	Cells Expanded: 14213.0	Fringe Size: 0.0
+	AStar:		Total Cost: 104.05634918610403	Runtime: 2.388sec	Cells Traveled: 237.0	Cells Expanded: 8761.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 121.68250352560273	Runtime: 0.022sec	Cells Traveled: 207.0	Cells Expanded: 535.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #1
+	Uniform:	Total Cost: 108.56612549695424	Runtime: 8.438sec	Cells Traveled: 159.0	Cells Expanded: 14556.0	Fringe Size: 0.0
+	AStar:		Total Cost: 108.56612549695424	Runtime: 1.581sec	Cells Traveled: 159.0	Cells Expanded: 8357.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 130.80382386916233	Runtime: 0.076sec	Cells Traveled: 154.0	Cells Expanded: 1820.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #2
+	Uniform:	Total Cost: 117.07716446627535	Runtime: 9.895sec	Cells Traveled: 243.0	Cells Expanded: 14244.0	Fringe Size: 0.0
+	AStar:		Total Cost: 117.07716446627535	Runtime: 1.583sec	Cells Traveled: 243.0	Cells Expanded: 8455.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 144.76828996322968	Runtime: 0.029sec	Cells Traveled: 237.0	Cells Expanded: 1061.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #3
+	Uniform:	Total Cost: 97.82106781186548	Runtime: 5.897sec	Cells Traveled: 228.0	Cells Expanded: 14376.0	Fringe Size: 0.0
+	AStar:		Total Cost: 97.82106781186548	Runtime: 3.153sec	Cells Traveled: 228.0	Cells Expanded: 9248.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 114.8406204335659	Runtime: 0.535sec	Cells Traveled: 102.0	Cells Expanded: 2854.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #4
+	Uniform:	Total Cost: 112.84924240491749	Runtime: 10.705sec	Cells Traveled: 247.0	Cells Expanded: 15125.0	Fringe Size: 0.0
+	AStar:		Total Cost: 112.84924240491749	Runtime: 5.19sec	Cells Traveled: 247.0	Cells Expanded: 11495.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 130.55382386916236	Runtime: 0.144sec	Cells Traveled: 217.0	Cells Expanded: 1289.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #5
+	Uniform:	Total Cost: 93.56370849898475	Runtime: 8.268sec	Cells Traveled: 228.0	Cells Expanded: 13683.0	Fringe Size: 0.0
+	AStar:		Total Cost: 93.56370849898475	Runtime: 1.183sec	Cells Traveled: 228.0	Cells Expanded: 7307.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 114.59062043356589	Runtime: 0.109sec	Cells Traveled: 155.0	Cells Expanded: 2262.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #6
+	Uniform:	Total Cost: 73.58452377915606	Runtime: 1.164sec	Cells Traveled: 132.0	Cells Expanded: 6746.0	Fringe Size: 0.0
+	AStar:		Total Cost: 73.58452377915606	Runtime: 0.66sec	Cells Traveled: 132.0	Cells Expanded: 3755.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 111.004833995939	Runtime: 0.26sec	Cells Traveled: 125.0	Cells Expanded: 1979.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #7
+	Uniform:	Total Cost: 110.12373734152914	Runtime: 4.583sec	Cells Traveled: 157.0	Cells Expanded: 13746.0	Fringe Size: 0.0
+	AStar:		Total Cost: 110.12373734152914	Runtime: 2.73sec	Cells Traveled: 157.0	Cells Expanded: 7304.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 134.3393577750951	Runtime: 0.156sec	Cells Traveled: 136.0	Cells Expanded: 1542.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #8
+	Uniform:	Total Cost: 125.30266952966367	Runtime: 8.943sec	Cells Traveled: 239.0	Cells Expanded: 15313.0	Fringe Size: 0.0
+	AStar:		Total Cost: 125.30266952966367	Runtime: 8.993sec	Cells Traveled: 239.0	Cells Expanded: 13451.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 145.82831880577413	Runtime: 0.154sec	Cells Traveled: 219.0	Cells Expanded: 1540.0	Fringe Size: 0.0
+
+
+Grid #1 Trial #9
+	Uniform:	Total Cost: 97.82348480983498	Runtime: 7.495sec	Cells Traveled: 153.0	Cells Expanded: 13530.0	Fringe Size: 0.0
+	AStar:		Total Cost: 97.82348480983498	Runtime: 1.149sec	Cells Traveled: 153.0	Cells Expanded: 7202.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 116.88351365237938	Runtime: 0.179sec	Cells Traveled: 137.0	Cells Expanded: 2583.0	Fringe Size: 0.0
 
 
 Grid #2 Trial #0
-	Uniform:	Total Cost: 120.64823227814078	Runtime: 6.478sec	Cells Traveled: 234.0	Cells Expanded: 15306.0
-	AStar:		Total Cost: 120.64823227814078	Runtime: 7.228sec	Cells Traveled: 234.0	Cells Expanded: 14498.0
-	W-AStar:	Total Cost: 168.8368324581534	Runtime: 1.879sec	Cells Traveled: 173.0	Cells Expanded: 5969.0
+	Uniform:	Total Cost: 60.65685424949238	Runtime: 0.705sec	Cells Traveled: 148.0	Cells Expanded: 4613.0	Fringe Size: 0.0
+	AStar:		Total Cost: 60.65685424949238	Runtime: 0.169sec	Cells Traveled: 148.0	Cells Expanded: 1718.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 74.60533905932738	Runtime: 0.087sec	Cells Traveled: 133.0	Cells Expanded: 1184.0	Fringe Size: 0.0
 
 
-Grid #3 Trial #0
-	Uniform:	Total Cost: 82.72424240491749	Runtime: 1.994sec	Cells Traveled: 134.0	Cells Expanded: 7240.0
-	AStar:		Total Cost: 82.72424240491749	Runtime: 0.33sec	Cells Traveled: 134.0	Cells Expanded: 4034.0
-	W-AStar:	Total Cost: 104.54404755831214	Runtime: 0.08sec	Cells Traveled: 113.0	Cells Expanded: 1996.0
+Grid #2 Trial #1
+	Uniform:	Total Cost: 115.15685424949237	Runtime: 9.862sec	Cells Traveled: 201.0	Cells Expanded: 14266.0	Fringe Size: 0.0
+	AStar:		Total Cost: 115.15685424949237	Runtime: 4.813sec	Cells Traveled: 201.0	Cells Expanded: 9688.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 141.4630951166243	Runtime: 0.402sec	Cells Traveled: 150.0	Cells Expanded: 3643.0	Fringe Size: 0.0
 
 
-Grid #4 Trial #0
-	Uniform:	Total Cost: 146.9632034355964	Runtime: 5.49sec	Cells Traveled: 248.0	Cells Expanded: 15047.0
-	AStar:		Total Cost: 146.9632034355964	Runtime: 5.945sec	Cells Traveled: 248.0	Cells Expanded: 13167.0
-	W-AStar:	Total Cost: 202.5292206135788	Runtime: 1.38sec	Cells Traveled: 193.0	Cells Expanded: 7618.0
+Grid #2 Trial #2
+	Uniform:	Total Cost: 109.13477631085021	Runtime: 7.198sec	Cells Traveled: 208.0	Cells Expanded: 13161.0	Fringe Size: 0.0
+	AStar:		Total Cost: 109.13477631085021	Runtime: 2.739sec	Cells Traveled: 208.0	Cells Expanded: 8243.0	Fringe Size: 0.0
+	W-AStar:	Total Cost: 130.0182899632296	Runtime: 0.43sec	Cells Traveled: 100.0	Cells Expanded: 2385.0	Fringe Size: 0.0
+
+
+Grid #2 Trial #3
