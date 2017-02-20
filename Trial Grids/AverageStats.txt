@@ -1,5 +1,5 @@
 Algorithm Average Stats
-	Uniform:	Total Cost: 126.14826619682803	Runtime: 0.49116000000000004sec	Cells Traveled: 202.46	Memory Used: 0	Cells Expanded: 13564.68	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 126.14826619682803	Runtime: 0.4027200000000001sec	Cells Traveled: 202.46	Memory Used: 0	Cells Expanded: 11105.32	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 128.01406272296825	Runtime: 0.26147999999999993sec	Cells Traveled: 184.4	Memory Used: 0	Cells Expanded: 5882.28	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 0.0	Runtime: 0.0sec	Cells Traveled: 0.0	Memory Used: 0	Cells Expanded: 0.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 111.45830444827405	Runtime: 0.1476sec	Cells Traveled: 175.0	Memory Used: 756123.2bytes	Cells Expanded: 13364.6
+	AStar:(1):	Total Cost: 111.45830444827405	Runtime: 0.10872sec	Cells Traveled: 175.0	Memory Used: 609974.4bytes	Cells Expanded: 10633.4
+	W-AStar (1.3):	Total Cost: 112.2337878478679	Runtime: 0.0689sec	Cells Traveled: 171.8	Memory Used: 328820.8bytes	Cells Expanded: 5540.6
+	W-AStar (2.6):	Total Cost: 112.2337878478679	Runtime: 0.0583sec	Cells Traveled: 171.8	Memory Used: 313622.4bytes	Cells Expanded: 5261.8
