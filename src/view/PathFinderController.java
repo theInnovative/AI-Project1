@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -49,6 +50,8 @@ public class PathFinderController implements Initializable {
 	protected TextField weight;
 	@FXML
 	protected Label label;
+	@FXML
+	protected CheckBox visualize;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -93,7 +96,7 @@ public class PathFinderController implements Initializable {
 		label.setText("");
 		begin.setDisable(true);
 
-		if(grid == null)
+		if(visualize.isSelected() && grid == null)
 			grid = new SimGUI (160, 120, this);
 
 		runTrials();
@@ -140,14 +143,13 @@ public class PathFinderController implements Initializable {
 
 	public void load(){
 		String line = pathname.getText();
-		loadGrid(line);
+		loadGrid(line, 1);
 
 		db = new GridPrinter.GPStruct[1];
 		db[0] = new GridPrinter.GPStruct(gridVals);
 		printer = new GridPrinter(db, grid);
 		thread = new Thread(printer);
 		thread.start();
-
 
 		GridPrinter.GPStruct gps = printer.db[0];
 		algorithms[1].findPath(start, goal, gridVals, grid, gps);
@@ -168,6 +170,21 @@ public class PathFinderController implements Initializable {
             pathname.setText(file.getPath());
             load.setDisable(false);
         }
+	}
+	
+	public void createBenchmarks(){
+		for(int i = 0; i < MAXGRIDS; i++){
+			for(int j = 0; j < MAXTRIALS; j++){
+				if(j == 0){
+					initGridVals();
+					placeHardCells();
+					while(!placePaths());
+					placeBlockedCells();
+				}
+				selectVertices();
+				printGrid(i, j);
+			}
+		}
 	}
 
 	private void runTrials() throws InterruptedException, IOException{
@@ -198,31 +215,20 @@ public class PathFinderController implements Initializable {
 				file.write(System.getProperty("line.separator"));
 				file.close();
 
-				if(j == 0){
-					initGridVals();
-					placeHardCells();
-					while(!placePaths());
-					placeBlockedCells();
-				}else
-					loadGrid(path + i + "-" + '0' + ".txt");
-
-				selectVertices();
-				//updateGrid();
-				printGrid(i, j);
+				loadGrid(path + i + "-" + '0' + ".txt", 0);
 				Cell[][] tmp = copyGrid();
-
 				db[(i*MAXTRIALS+j)*3    ] = new GridPrinter.GPStruct(tmp);
 				runAlgorithm(0, i, j, db[(i*MAXTRIALS+j)*3    ]);
 
-				loadGrid(path + i + "-" + j +".txt");
+				loadGrid(path + i + "-" + j +".txt", 0);
 				db[(i*MAXTRIALS+j)*3 + 1] = new GridPrinter.GPStruct(tmp);
 				runAlgorithm(1, i, j, db[(i*MAXTRIALS+j)*3 + 1]);
 
-				loadGrid(path + i +  "-" + j +".txt");
+				loadGrid(path + i +  "-" + j +".txt", 0);
 				db[(i*MAXTRIALS+j)*3 + 2] = new GridPrinter.GPStruct(tmp);
 				runAlgorithm(2, i, j, db[(i*MAXTRIALS+j)*3 + 2]);
 
-				loadGrid(path + i +  "-" + j +".txt");
+				loadGrid(path + i +  "-" + j +".txt", 0);
 				db[(i*MAXTRIALS+j)*3 + 3] = new GridPrinter.GPStruct(tmp);
 				runAlgorithm(3, i, j, db[(i*MAXTRIALS+j)*3 + 3]);
 
@@ -255,7 +261,7 @@ public class PathFinderController implements Initializable {
 		storeStats(allStats[i][j][index].toString());
 	}
 
-	private void loadGrid(String name){
+	private void loadGrid(String name, int mode){
 		String line, pts[];
 		File file = new File(name);
 		centers.clear();
@@ -264,8 +270,8 @@ public class PathFinderController implements Initializable {
 		if(file.exists()){
 			try {
 				BufferedReader reader = new BufferedReader(new FileReader(file));
-
-				if(grid == null){
+ 
+				if((visualize.isSelected() || mode == 1) && grid == null){
 					grid = new SimGUI(160, 120, this);
 				}
 				gridVals = new Cell[160][120];
