@@ -147,9 +147,9 @@ public class PathFinderController implements Initializable {
 
 		db = new GridPrinter.GPStruct[1];
 		db[0] = new GridPrinter.GPStruct(gridVals);
+		db[0].gV = copyGrid();
 		printer = new GridPrinter(db, grid);
-		thread = new Thread(printer);
-		thread.start();
+		new Thread(printer).start();
 
 		GridPrinter.GPStruct gps = printer.db[0];
 		algorithms[1].findPath(start, goal, gridVals, grid, gps);
@@ -173,10 +173,13 @@ public class PathFinderController implements Initializable {
 	}
 	
 	public void createBenchmarks(){
+		gridVals = new Cell[160][120];
+		
 		for(int i = 0; i < MAXGRIDS; i++){
 			for(int j = 0; j < MAXTRIALS; j++){
 				if(j == 0){
 					initGridVals();
+					centers.clear();
 					placeHardCells();
 					while(!placePaths());
 					placeBlockedCells();
@@ -188,14 +191,14 @@ public class PathFinderController implements Initializable {
 	}
 
 	private void runTrials() throws InterruptedException, IOException{
-		gridVals = new Cell[160][120];
-		centers.clear();
 		String line = "";
 
 		db = new GridPrinter.GPStruct[MAXGRIDS * MAXTRIALS * 4];
-		printer = new GridPrinter(db, grid);
-		thread = new Thread(printer);
-		thread.start();
+		
+		if(visualize.isSelected()){
+			printer = new GridPrinter(db, grid);
+			new Thread(printer).start();
+		}
 
 		averages[0] = new UniformSearch().getNewStats();
 		averages[1] = new AStar(1).getNewStats();
@@ -207,10 +210,9 @@ public class PathFinderController implements Initializable {
 
 		for(int i = 0; i < MAXGRIDS; i++){
 			for(int j = 0; j < MAXTRIALS; j++){
-				centers.clear();
 
 				file =  new FileWriter(path2, true);
-				line = "\n\nGrid #" + i + " Trial #" + j;
+				line = "\nGrid #" + i + " Trial #" + j;
 				file.write(line, 0, line.length());
 				file.write(System.getProperty("line.separator"));
 				file.close();
@@ -253,8 +255,10 @@ public class PathFinderController implements Initializable {
 		allStats[i][j][index].cellsTraveled = tracePath(gps);
 		gps.ready = true;
 
-		synchronized (printer){
-			printer.notify();
+		if(visualize.isSelected()){
+			synchronized (printer){
+				printer.notify();
+			}
 		}
 
 		averages[index].addStats(allStats[i][j][index]);
@@ -330,8 +334,6 @@ public class PathFinderController implements Initializable {
 			} catch (IOException e){
 				e.printStackTrace();
 			}
-
-			db[0].gV = copyGrid();
 		}
 	}
 

@@ -30,7 +30,7 @@ public class SimGUI extends JFrame {
 	 */
 	public SimGUI(int x, int y, PathFinderController controller) {
 		super("PathFinder");
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(y * BUTTON_SIZE, x * BUTTON_SIZE);
 
 		gamePanel = new JPanel(new GridLayout(y, x));

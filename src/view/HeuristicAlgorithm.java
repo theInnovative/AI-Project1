@@ -60,8 +60,8 @@ public abstract class HeuristicAlgorithm {
 					+ "\tRuntime: " + runtime + "sec"
 					+ "\tCells Traveled: " + cellsTraveled
 					+ "\tMemory Used: " + memUsed
-					+ "\tCells Expanded: " + expanded
-					+ "\tFringe Size: " + fringe;
+					+ "\tCells Expanded: " + expanded;
+					//+ "\tFringe Size: " + fringe;
 		}
 	}
 

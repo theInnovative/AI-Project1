@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 Algorithm Average Stats
-	Uniform:	Total Cost: 126.14826619682803	Runtime: 0.49116000000000004sec	Cells Traveled: 202.46	Memory Used: 0	Cells Expanded: 13564.68	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 126.14826619682803	Runtime: 0.4027200000000001sec	Cells Traveled: 202.46	Memory Used: 0	Cells Expanded: 11105.32	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 128.01406272296825	Runtime: 0.26147999999999993sec	Cells Traveled: 184.4	Memory Used: 0	Cells Expanded: 5882.28	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 0.0	Runtime: 0.0sec	Cells Traveled: 0.0	Memory Used: 0	Cells Expanded: 0.0	Fringe Size: 0.0
-=======
-Algorithm Average Stats
-	Uniform:	Total Cost: 119.73627484959133	Runtime: 5.669140000000001sec	Cells Traveled: 182.02	Cells Expanded: 12823.36	Fringe Size: 0.0
-	AStar:		Total Cost: 119.73627484959133	Runtime: 3.6464200000000004sec	Cells Traveled: 182.02	Cells Expanded: 9851.78	Fringe Size: 0.0
-	W-AStar:	Total Cost: 137.89533107342123	Runtime: 0.44481999999999994sec	Cells Traveled: 148.88	Cells Expanded: 3306.82	Fringe Size: 0.0
->>>>>>> refs/remotes/origin/eric
+	Uniform:	Total Cost: 111.45830444827405	Runtime: 0.09320000000000003sec	Cells Traveled: 175.0	Memory Used: 756123.2	Cells Expanded: 13364.6	Fringe Size: 0.0
+	AStar:(1):	Total Cost: 118.32781021678292	Runtime: 0.08363999999999999sec	Cells Traveled: 191.02	Memory Used: 599310.88	Cells Expanded: 10463.78	Fringe Size: 0.0
+	W-AStar (1.3):	Total Cost: 120.88304325106215	Runtime: 0.05155999999999999sec	Cells Traveled: 179.48	Memory Used: 333912.32	Cells Expanded: 5633.34	Fringe Size: 0.0
+	W-AStar (2.6):	Total Cost: 121.0201500322487	Runtime: 0.047379999999999985sec	Cells Traveled: 178.72	Memory Used: 315106.4	Cells Expanded: 5294.76	Fringe Size: 0.0
