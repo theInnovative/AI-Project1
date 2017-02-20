@@ -59,7 +59,7 @@ public abstract class HeuristicAlgorithm {
 					+ "\tTotal Cost: " + totalCost
 					+ "\tRuntime: " + runtime + "sec"
 					+ "\tCells Traveled: " + cellsTraveled
-					+ "\tMemory Used: " + memUsed
+					+ "\tMemory Used: " + memUsed + "bytes"
 					+ "\tCells Expanded: " + expanded;
 					//+ "\tFringe Size: " + fringe;
 		}

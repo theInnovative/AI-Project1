@@ -214,23 +214,12 @@ public class PathFinderController implements Initializable {
 				file.write(System.getProperty("line.separator"));
 				file.close();
 
-				loadGrid(path + i + "-" + '0' + ".txt", 0);
-				Cell[][] tmp = copyGrid();
-				db[(i*MAXTRIALS+j)*3    ] = new GridPrinter.GPStruct(tmp);
-				runAlgorithm(0, i, j, db[(i*MAXTRIALS+j)*3    ]);
-
-				loadGrid(path + i + "-" + j +".txt", 0);
-				db[(i*MAXTRIALS+j)*3 + 1] = new GridPrinter.GPStruct(tmp);
-				runAlgorithm(1, i, j, db[(i*MAXTRIALS+j)*3 + 1]);
-
-				loadGrid(path + i +  "-" + j +".txt", 0);
-				db[(i*MAXTRIALS+j)*3 + 2] = new GridPrinter.GPStruct(tmp);
-				runAlgorithm(2, i, j, db[(i*MAXTRIALS+j)*3 + 2]);
-
-				loadGrid(path + i +  "-" + j +".txt", 0);
-				db[(i*MAXTRIALS+j)*3 + 3] = new GridPrinter.GPStruct(tmp);
-				runAlgorithm(3, i, j, db[(i*MAXTRIALS+j)*3 + 3]);
-
+				for(int x = 0; x < algorithms.length; x++){
+					loadGrid(path + i + "-" + '0' + ".txt", 0);
+					Cell[][] tmp = copyGrid();
+					db[(i*MAXTRIALS+j)*3 + x] = new GridPrinter.GPStruct(tmp);
+					runAlgorithm(x, i, j, db[(i*MAXTRIALS+j)*3 + x]);
+				}
 			}
 		}
 	}

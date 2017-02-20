@@ -1,300 +1,300 @@
 
 Grid #0 Trial #0
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.37sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.416sec	Cells Traveled: 191.0	Memory Used: 660912.0	Cells Expanded: 11620.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.097sec	Cells Traveled: 191.0	Memory Used: 394296.0	Cells Expanded: 6656.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.081sec	Cells Traveled: 191.0	Memory Used: 366576.0	Cells Expanded: 6162.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.205sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.137sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.071sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.038sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #1
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.131sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 176.71320343559648	Runtime: 0.218sec	Cells Traveled: 233.0	Memory Used: 841064.0	Cells Expanded: 14974.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 176.71320343559648	Runtime: 0.186sec	Cells Traveled: 233.0	Memory Used: 763000.0	Cells Expanded: 13393.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 176.71320343559648	Runtime: 0.178sec	Cells Traveled: 233.0	Memory Used: 749616.0	Cells Expanded: 13150.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.056sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.057sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.036sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.119sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #2
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.037sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 53.99264068711928	Runtime: 0.009sec	Cells Traveled: 130.0	Memory Used: 142576.0	Cells Expanded: 2336.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 55.79898987322333	Runtime: 0.002sec	Cells Traveled: 119.0	Memory Used: 45472.0	Cells Expanded: 584.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 55.79898987322333	Runtime: 0.002sec	Cells Traveled: 119.0	Memory Used: 45136.0	Cells Expanded: 576.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.16sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.132sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.229sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.059sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #3
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.034sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 159.3700576850888	Runtime: 0.043sec	Cells Traveled: 162.0	Memory Used: 672112.0	Cells Expanded: 11853.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 159.5342712474619	Runtime: 0.017sec	Cells Traveled: 161.0	Memory Used: 366240.0	Cells Expanded: 6332.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 159.5342712474619	Runtime: 0.011sec	Cells Traveled: 161.0	Memory Used: 350560.0	Cells Expanded: 6064.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.134sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.121sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.089sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.076sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #4
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.044sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 161.87741699796953	Runtime: 0.043sec	Cells Traveled: 174.0	Memory Used: 694512.0	Cells Expanded: 12242.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 161.87741699796953	Runtime: 0.024sec	Cells Traveled: 174.0	Memory Used: 373688.0	Cells Expanded: 6458.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 161.87741699796953	Runtime: 0.022sec	Cells Traveled: 174.0	Memory Used: 357392.0	Cells Expanded: 6164.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.144sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.169sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.085sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.207sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #5
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.037sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 148.81980515339464	Runtime: 0.036sec	Cells Traveled: 208.0	Memory Used: 716408.0	Cells Expanded: 12595.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 155.51587296526012	Runtime: 0.023sec	Cells Traveled: 169.0	Memory Used: 433440.0	Cells Expanded: 7514.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 155.51587296526012	Runtime: 0.022sec	Cells Traveled: 169.0	Memory Used: 415408.0	Cells Expanded: 7201.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.05sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.041sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.026sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.031sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #6
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.037sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 147.29163056034264	Runtime: 0.04sec	Cells Traveled: 150.0	Memory Used: 722904.0	Cells Expanded: 12697.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 147.29163056034264	Runtime: 0.035sec	Cells Traveled: 150.0	Memory Used: 506968.0	Cells Expanded: 8819.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 147.29163056034264	Runtime: 0.029sec	Cells Traveled: 150.0	Memory Used: 483784.0	Cells Expanded: 8384.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.048sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.036sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.018sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.027sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #7
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.038sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 152.78427124746185	Runtime: 0.057sec	Cells Traveled: 225.0	Memory Used: 763168.0	Cells Expanded: 13499.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 155.7058441227157	Runtime: 0.057sec	Cells Traveled: 227.0	Memory Used: 566496.0	Cells Expanded: 9886.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 155.7058441227157	Runtime: 0.05sec	Cells Traveled: 227.0	Memory Used: 536256.0	Cells Expanded: 9313.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.038sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.059sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.03sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.027sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #8
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.033sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 51.656854249492376	Runtime: 0.007sec	Cells Traveled: 131.0	Memory Used: 122136.0	Cells Expanded: 1971.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 52.970562748477136	Runtime: 0.001sec	Cells Traveled: 123.0	Memory Used: 36176.0	Cells Expanded: 421.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 52.970562748477136	Runtime: 0.001sec	Cells Traveled: 123.0	Memory Used: 36120.0	Cells Expanded: 414.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.052sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.037sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.025sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.03sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #0 Trial #9
-	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.041sec	Cells Traveled: 191.0	Memory Used: 745808.0	Cells Expanded: 13198.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 157.44112549695433	Runtime: 0.031sec	Cells Traveled: 152.0	Memory Used: 682752.0	Cells Expanded: 11986.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 157.44112549695433	Runtime: 0.02sec	Cells Traveled: 152.0	Memory Used: 476336.0	Cells Expanded: 8266.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 157.44112549695433	Runtime: 0.023sec	Cells Traveled: 152.0	Memory Used: 452312.0	Cells Expanded: 7834.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 129.08452377915603	Runtime: 0.054sec	Cells Traveled: 191.0	Memory Used: 745808.0bytes	Cells Expanded: 13198.0
+	AStar:(1):	Total Cost: 129.08452377915603	Runtime: 0.05sec	Cells Traveled: 191.0	Memory Used: 660912.0bytes	Cells Expanded: 11620.0
+	W-AStar (1.3):	Total Cost: 129.08452377915603	Runtime: 0.033sec	Cells Traveled: 191.0	Memory Used: 394296.0bytes	Cells Expanded: 6656.0
+	W-AStar (2.6):	Total Cost: 129.08452377915603	Runtime: 0.026sec	Cells Traveled: 191.0	Memory Used: 366576.0bytes	Cells Expanded: 6162.0
 
 Grid #1 Trial #0
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.062sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.072sec	Cells Traveled: 107.0	Memory Used: 676200.0	Cells Expanded: 11813.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.073sec	Cells Traveled: 107.0	Memory Used: 242760.0	Cells Expanded: 4165.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.008sec	Cells Traveled: 107.0	Memory Used: 231616.0	Cells Expanded: 3941.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.063sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.064sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.009sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.012sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #1
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.057sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 107.31370849898475	Runtime: 0.068sec	Cells Traveled: 232.0	Memory Used: 617960.0	Cells Expanded: 10705.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 107.64213562373094	Runtime: 0.007sec	Cells Traveled: 230.0	Memory Used: 136472.0	Cells Expanded: 1960.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 107.64213562373094	Runtime: 0.011sec	Cells Traveled: 230.0	Memory Used: 124880.0	Cells Expanded: 1751.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.077sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.165sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.03sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.024sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #2
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.058sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 96.45584412271569	Runtime: 0.022sec	Cells Traveled: 143.0	Memory Used: 322392.0	Cells Expanded: 5541.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 96.45584412271569	Runtime: 0.007sec	Cells Traveled: 143.0	Memory Used: 154616.0	Cells Expanded: 2492.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 96.45584412271569	Runtime: 0.006sec	Cells Traveled: 143.0	Memory Used: 151200.0	Cells Expanded: 2430.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.201sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.149sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.023sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.029sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #3
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.219sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 147.5342712474619	Runtime: 0.319sec	Cells Traveled: 158.0	Memory Used: 804328.0	Cells Expanded: 14236.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 147.5342712474619	Runtime: 0.098sec	Cells Traveled: 158.0	Memory Used: 385616.0	Cells Expanded: 6612.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 147.5342712474619	Runtime: 0.069sec	Cells Traveled: 158.0	Memory Used: 362880.0	Cells Expanded: 6228.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.163sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.518sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.034sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.029sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #4
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.238sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 92.40685424949237	Runtime: 0.134sec	Cells Traveled: 201.0	Memory Used: 396984.0	Cells Expanded: 6756.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 105.0416305603426	Runtime: 0.034sec	Cells Traveled: 168.0	Memory Used: 178416.0	Cells Expanded: 2911.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 105.0416305603426	Runtime: 0.022sec	Cells Traveled: 168.0	Memory Used: 173320.0	Cells Expanded: 2813.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.191sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.196sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.018sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.008sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #5
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.406sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 133.2916305603426	Runtime: 0.256sec	Cells Traveled: 238.0	Memory Used: 853384.0	Cells Expanded: 15196.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 136.52691193458116	Runtime: 0.37sec	Cells Traveled: 228.0	Memory Used: 760648.0	Cells Expanded: 13382.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 136.77691193458116	Runtime: 0.41sec	Cells Traveled: 226.0	Memory Used: 746648.0	Cells Expanded: 13089.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.05sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.051sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.01sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.009sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #6
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.222sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 143.12741699796953	Runtime: 0.227sec	Cells Traveled: 246.0	Memory Used: 856576.0	Cells Expanded: 15274.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 143.54898987322335	Runtime: 0.129sec	Cells Traveled: 242.0	Memory Used: 770392.0	Cells Expanded: 13615.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 143.54898987322335	Runtime: 0.155sec	Cells Traveled: 242.0	Memory Used: 759472.0	Cells Expanded: 13406.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.062sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.049sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.009sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.008sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #7
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.08sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 129.1347763108502	Runtime: 0.041sec	Cells Traveled: 237.0	Memory Used: 524104.0	Cells Expanded: 8985.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 129.9558441227157	Runtime: 0.033sec	Cells Traveled: 232.0	Memory Used: 388640.0	Cells Expanded: 6456.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 134.9545814642448	Runtime: 0.034sec	Cells Traveled: 203.0	Memory Used: 372624.0	Cells Expanded: 6236.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.058sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.058sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.01sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.009sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #8
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.061sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 106.97056274847711	Runtime: 0.059sec	Cells Traveled: 105.0	Memory Used: 707672.0	Cells Expanded: 12414.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 106.97056274847711	Runtime: 0.01sec	Cells Traveled: 105.0	Memory Used: 277088.0	Cells Expanded: 4648.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 106.97056274847711	Runtime: 0.019sec	Cells Traveled: 105.0	Memory Used: 241864.0	Cells Expanded: 4131.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.067sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.071sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.014sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.01sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #1 Trial #9
-	Uniform:	Total Cost: 107.9632034355964	Runtime: 0.098sec	Cells Traveled: 107.0	Memory Used: 814856.0	Cells Expanded: 14464.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 88.80634918610401	Runtime: 0.169sec	Cells Traveled: 169.0	Memory Used: 605080.0	Cells Expanded: 10589.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 88.80634918610401	Runtime: 0.133sec	Cells Traveled: 169.0	Memory Used: 332360.0	Cells Expanded: 5676.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 88.80634918610401	Runtime: 0.096sec	Cells Traveled: 169.0	Memory Used: 316288.0	Cells Expanded: 5372.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 107.9632034355964	Runtime: 2.006sec	Cells Traveled: 107.0	Memory Used: 814856.0bytes	Cells Expanded: 14464.0
+	AStar:(1):	Total Cost: 107.9632034355964	Runtime: 0.358sec	Cells Traveled: 107.0	Memory Used: 676200.0bytes	Cells Expanded: 11813.0
+	W-AStar (1.3):	Total Cost: 107.9632034355964	Runtime: 0.038sec	Cells Traveled: 107.0	Memory Used: 242760.0bytes	Cells Expanded: 4165.0
+	W-AStar (2.6):	Total Cost: 107.9632034355964	Runtime: 0.039sec	Cells Traveled: 107.0	Memory Used: 231616.0bytes	Cells Expanded: 3941.0
 
 Grid #2 Trial #0
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.132sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.151sec	Cells Traveled: 224.0	Memory Used: 703864.0	Cells Expanded: 12251.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.207sec	Cells Traveled: 215.0	Memory Used: 544096.0	Cells Expanded: 9199.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.203sec	Cells Traveled: 215.0	Memory Used: 531104.0	Cells Expanded: 8970.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.161sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.184sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.215sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.211sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #1
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.124sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 105.34924240491749	Runtime: 0.145sec	Cells Traveled: 214.0	Memory Used: 630112.0	Cells Expanded: 10922.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 109.34062043356589	Runtime: 0.039sec	Cells Traveled: 194.0	Memory Used: 140952.0	Cells Expanded: 2021.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 109.66904755831209	Runtime: 0.018sec	Cells Traveled: 192.0	Memory Used: 113624.0	Cells Expanded: 1585.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.164sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.19sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.217sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.201sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #2
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.105sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 123.34188309203677	Runtime: 0.158sec	Cells Traveled: 241.0	Memory Used: 761320.0	Cells Expanded: 13366.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 128.7413780286484	Runtime: 0.117sec	Cells Traveled: 232.0	Memory Used: 316736.0	Cells Expanded: 5084.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 129.3982322781408	Runtime: 0.073sec	Cells Traveled: 228.0	Memory Used: 255976.0	Cells Expanded: 3977.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.159sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.178sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.461sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.093sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #3
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.132sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 131.05634918610403	Runtime: 0.143sec	Cells Traveled: 239.0	Memory Used: 748888.0	Cells Expanded: 13130.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 133.03427124746187	Runtime: 0.102sec	Cells Traveled: 230.0	Memory Used: 386176.0	Cells Expanded: 6330.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 133.03427124746187	Runtime: 0.094sec	Cells Traveled: 230.0	Memory Used: 359184.0	Cells Expanded: 5824.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.062sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.075sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.075sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.06sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #4
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.142sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 128.31370849898474	Runtime: 0.121sec	Cells Traveled: 239.0	Memory Used: 751688.0	Cells Expanded: 13251.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 128.64213562373092	Runtime: 0.107sec	Cells Traveled: 237.0	Memory Used: 371784.0	Cells Expanded: 6069.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 128.64213562373092	Runtime: 0.085sec	Cells Traveled: 237.0	Memory Used: 329616.0	Cells Expanded: 5324.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.06sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.07sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.07sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.075sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #5
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.059sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 105.82106781186548	Runtime: 0.037sec	Cells Traveled: 220.0	Memory Used: 606592.0	Cells Expanded: 10531.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 113.7916305603426	Runtime: 0.03sec	Cells Traveled: 215.0	Memory Used: 305872.0	Cells Expanded: 4941.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 113.7916305603426	Runtime: 0.026sec	Cells Traveled: 215.0	Memory Used: 249200.0	Cells Expanded: 3905.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.091sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.08sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.115sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.096sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #6
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.039sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 105.64213562373092	Runtime: 0.036sec	Cells Traveled: 190.0	Memory Used: 551096.0	Cells Expanded: 9634.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 111.31244584051389	Runtime: 0.014sec	Cells Traveled: 149.0	Memory Used: 217504.0	Cells Expanded: 3581.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 111.31244584051389	Runtime: 0.009sec	Cells Traveled: 149.0	Memory Used: 207200.0	Cells Expanded: 3385.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.063sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.093sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.103sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.078sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #7
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.043sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 89.22792206135784	Runtime: 0.03sec	Cells Traveled: 175.0	Memory Used: 447048.0	Cells Expanded: 7688.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 89.72056274847712	Runtime: 0.008sec	Cells Traveled: 172.0	Memory Used: 167440.0	Cells Expanded: 2603.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 89.72056274847712	Runtime: 0.01sec	Cells Traveled: 172.0	Memory Used: 161112.0	Cells Expanded: 2505.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.05sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.078sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.12sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.225sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #8
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.15sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 135.26713562373095	Runtime: 0.068sec	Cells Traveled: 247.0	Memory Used: 825440.0	Cells Expanded: 14579.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 137.56612549695424	Runtime: 0.048sec	Cells Traveled: 233.0	Memory Used: 392168.0	Cells Expanded: 6490.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 137.56612549695424	Runtime: 0.056sec	Cells Traveled: 233.0	Memory Used: 324744.0	Cells Expanded: 5243.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.156sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.395sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.39sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.229sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #2 Trial #9
-	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.05sec	Cells Traveled: 224.0	Memory Used: 792232.0	Cells Expanded: 14005.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 127.55634918610404	Runtime: 0.062sec	Cells Traveled: 268.0	Memory Used: 755496.0	Cells Expanded: 13214.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 144.22665940288704	Runtime: 0.037sec	Cells Traveled: 132.0	Memory Used: 565600.0	Cells Expanded: 9713.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 144.22665940288704	Runtime: 0.038sec	Cells Traveled: 132.0	Memory Used: 534408.0	Cells Expanded: 9158.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 114.81370849898474	Runtime: 0.181sec	Cells Traveled: 224.0	Memory Used: 792232.0bytes	Cells Expanded: 14005.0
+	AStar:(1):	Total Cost: 114.81370849898474	Runtime: 0.19sec	Cells Traveled: 224.0	Memory Used: 703864.0bytes	Cells Expanded: 12251.0
+	W-AStar (1.3):	Total Cost: 116.79163056034257	Runtime: 0.223sec	Cells Traveled: 215.0	Memory Used: 544096.0bytes	Cells Expanded: 9199.0
+	W-AStar (2.6):	Total Cost: 116.79163056034257	Runtime: 0.241sec	Cells Traveled: 215.0	Memory Used: 531104.0bytes	Cells Expanded: 8970.0
 
 Grid #3 Trial #0
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.038sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.028sec	Cells Traveled: 167.0	Memory Used: 405888.0	Cells Expanded: 7008.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.012sec	Cells Traveled: 167.0	Memory Used: 162680.0	Cells Expanded: 2593.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.01sec	Cells Traveled: 167.0	Memory Used: 157136.0	Cells Expanded: 2500.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.049sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.032sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.013sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.011sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #1
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.048sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 48.492640687119284	Runtime: 0.003sec	Cells Traveled: 147.0	Memory Used: 62440.0	Cells Expanded: 841.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 49.992640687119284	Runtime: 0.001sec	Cells Traveled: 145.0	Memory Used: 28448.0	Cells Expanded: 223.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 49.992640687119284	Runtime: 0.001sec	Cells Traveled: 145.0	Memory Used: 28448.0	Cells Expanded: 223.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.086sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.096sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.028sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.024sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #2
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.039sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 69.64949493661165	Runtime: 0.017sec	Cells Traveled: 164.0	Memory Used: 254912.0	Cells Expanded: 4277.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 72.29898987322332	Runtime: 0.003sec	Cells Traveled: 155.0	Memory Used: 64344.0	Cells Expanded: 819.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 72.29898987322332	Runtime: 0.002sec	Cells Traveled: 155.0	Memory Used: 62328.0	Cells Expanded: 791.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.128sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.082sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.037sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.024sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #3
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.041sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 161.24747468305827	Runtime: 0.034sec	Cells Traveled: 214.0	Memory Used: 690088.0	Cells Expanded: 11994.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 166.1641052434009	Runtime: 0.026sec	Cells Traveled: 192.0	Memory Used: 413000.0	Cells Expanded: 7025.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 166.1641052434009	Runtime: 0.022sec	Cells Traveled: 192.0	Memory Used: 403032.0	Cells Expanded: 6846.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.12sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.09sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.028sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.026sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #4
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.049sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 165.07590180780448	Runtime: 0.059sec	Cells Traveled: 222.0	Memory Used: 730408.0	Cells Expanded: 12721.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 171.24253236814712	Runtime: 0.031sec	Cells Traveled: 202.0	Memory Used: 434000.0	Cells Expanded: 7385.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 171.24253236814712	Runtime: 0.031sec	Cells Traveled: 202.0	Memory Used: 423192.0	Cells Expanded: 7206.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.118sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.089sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.029sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.024sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #5
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.047sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 136.54772721475248	Runtime: 0.028sec	Cells Traveled: 169.0	Memory Used: 545608.0	Cells Expanded: 9537.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 137.9901153701776	Runtime: 0.022sec	Cells Traveled: 162.0	Memory Used: 347312.0	Cells Expanded: 5982.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 137.9901153701776	Runtime: 0.017sec	Cells Traveled: 162.0	Memory Used: 335216.0	Cells Expanded: 5774.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.14sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.087sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.023sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.021sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #6
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.041sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 143.19112549695424	Runtime: 0.057sec	Cells Traveled: 208.0	Memory Used: 844424.0	Cells Expanded: 15038.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 146.91536790187175	Runtime: 0.077sec	Cells Traveled: 195.0	Memory Used: 807240.0	Cells Expanded: 14264.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 146.91536790187175	Runtime: 0.076sec	Cells Traveled: 195.0	Memory Used: 795816.0	Cells Expanded: 14033.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.103sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.073sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.028sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.047sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #7
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.04sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 60.656854249492376	Runtime: 0.013sec	Cells Traveled: 163.0	Memory Used: 187152.0	Cells Expanded: 3056.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 64.10292206135784	Runtime: 0.003sec	Cells Traveled: 156.0	Memory Used: 50008.0	Cells Expanded: 593.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 64.35292206135784	Runtime: 0.002sec	Cells Traveled: 156.0	Memory Used: 49616.0	Cells Expanded: 581.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.17sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.092sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.034sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.029sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #8
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.043sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 107.79898987322332	Runtime: 0.038sec	Cells Traveled: 224.0	Memory Used: 573888.0	Cells Expanded: 9885.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 109.29898987322332	Runtime: 0.007sec	Cells Traveled: 222.0	Memory Used: 109312.0	Cells Expanded: 1462.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 109.29898987322332	Runtime: 0.005sec	Cells Traveled: 222.0	Memory Used: 103152.0	Cells Expanded: 1356.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.154sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.031sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.009sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.007sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #3 Trial #9
-	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.042sec	Cells Traveled: 167.0	Memory Used: 611800.0	Cells Expanded: 10753.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 141.51955262170043	Runtime: 0.066sec	Cells Traveled: 199.0	Memory Used: 798280.0	Cells Expanded: 13995.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 141.77691193458114	Runtime: 0.018sec	Cells Traveled: 196.0	Memory Used: 325640.0	Cells Expanded: 5521.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 141.77691193458114	Runtime: 0.013sec	Cells Traveled: 196.0	Memory Used: 301224.0	Cells Expanded: 5070.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 87.23528137423855	Runtime: 0.038sec	Cells Traveled: 167.0	Memory Used: 611800.0bytes	Cells Expanded: 10753.0
+	AStar:(1):	Total Cost: 87.23528137423855	Runtime: 0.032sec	Cells Traveled: 167.0	Memory Used: 405888.0bytes	Cells Expanded: 7008.0
+	W-AStar (1.3):	Total Cost: 87.23528137423855	Runtime: 0.007sec	Cells Traveled: 167.0	Memory Used: 162680.0bytes	Cells Expanded: 2593.0
+	W-AStar (2.6):	Total Cost: 87.23528137423855	Runtime: 0.008sec	Cells Traveled: 167.0	Memory Used: 157136.0bytes	Cells Expanded: 2500.0
 
 Grid #4 Trial #0
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.241sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.055sec	Cells Traveled: 186.0	Memory Used: 603008.0	Cells Expanded: 10475.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.024sec	Cells Traveled: 179.0	Memory Used: 300272.0	Cells Expanded: 5090.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.019sec	Cells Traveled: 179.0	Memory Used: 281680.0	Cells Expanded: 4736.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.052sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.035sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.022sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.018sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #1
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.058sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 118.78059159102153	Runtime: 0.037sec	Cells Traveled: 187.0	Memory Used: 517216.0	Cells Expanded: 8962.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 124.30140687119284	Runtime: 0.014sec	Cells Traveled: 180.0	Memory Used: 269976.0	Cells Expanded: 4542.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 124.67272721475248	Runtime: 0.014sec	Cells Traveled: 179.0	Memory Used: 254576.0	Cells Expanded: 4259.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.082sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.057sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.019sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.022sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #2
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.063sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 103.90191193458118	Runtime: 0.076sec	Cells Traveled: 167.0	Memory Used: 438144.0	Cells Expanded: 7460.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 103.90191193458118	Runtime: 0.012sec	Cells Traveled: 167.0	Memory Used: 217840.0	Cells Expanded: 3545.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 103.90191193458118	Runtime: 0.016sec	Cells Traveled: 167.0	Memory Used: 210392.0	Cells Expanded: 3386.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.38sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.057sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.032sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.071sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #3
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.072sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 81.26345596729057	Runtime: 0.028sec	Cells Traveled: 138.0	Memory Used: 386512.0	Cells Expanded: 6693.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 82.74137802864843	Runtime: 0.011sec	Cells Traveled: 129.0	Memory Used: 161112.0	Cells Expanded: 2577.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 82.74137802864843	Runtime: 0.011sec	Cells Traveled: 129.0	Memory Used: 151536.0	Cells Expanded: 2409.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.101sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.074sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.1sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.026sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #4
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.072sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 113.34188309203677	Runtime: 0.064sec	Cells Traveled: 213.0	Memory Used: 684992.0	Cells Expanded: 11935.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 119.48401871576769	Runtime: 0.05sec	Cells Traveled: 210.0	Memory Used: 430472.0	Cells Expanded: 7250.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 119.48401871576769	Runtime: 0.065sec	Cells Traveled: 210.0	Memory Used: 392952.0	Cells Expanded: 6520.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.08sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.05sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.028sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.035sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #5
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.102sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 123.25609665440986	Runtime: 0.111sec	Cells Traveled: 224.0	Memory Used: 715848.0	Cells Expanded: 12524.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 131.04036790187175	Runtime: 0.112sec	Cells Traveled: 211.0	Memory Used: 469896.0	Cells Expanded: 8008.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 131.04036790187175	Runtime: 0.11sec	Cells Traveled: 211.0	Memory Used: 437136.0	Cells Expanded: 7395.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.195sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.049sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.021sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.017sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #6
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.184sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 123.01219330881972	Runtime: 0.104sec	Cells Traveled: 108.0	Memory Used: 576856.0	Cells Expanded: 10016.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 123.01219330881972	Runtime: 0.03sec	Cells Traveled: 108.0	Memory Used: 282464.0	Cells Expanded: 4787.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 123.01219330881972	Runtime: 0.014sec	Cells Traveled: 108.0	Memory Used: 267568.0	Cells Expanded: 4513.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.058sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.044sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.016sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.019sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #7
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.057sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 112.15559159102155	Runtime: 0.043sec	Cells Traveled: 198.0	Memory Used: 536928.0	Cells Expanded: 9248.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 112.64087296526009	Runtime: 0.012sec	Cells Traveled: 119.0	Memory Used: 277536.0	Cells Expanded: 4707.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 112.64087296526009	Runtime: 0.015sec	Cells Traveled: 119.0	Memory Used: 264936.0	Cells Expanded: 4469.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.057sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.04sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.022sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.018sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #8
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.053sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 113.19480515339464	Runtime: 0.045sec	Cells Traveled: 181.0	Memory Used: 539952.0	Cells Expanded: 9364.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 113.19480515339464	Runtime: 0.02sec	Cells Traveled: 181.0	Memory Used: 245112.0	Cells Expanded: 4052.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 113.19480515339464	Runtime: 0.04sec	Cells Traveled: 181.0	Memory Used: 229264.0	Cells Expanded: 3777.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.056sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.103sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.061sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.06sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0
 
 Grid #4 Trial #9
-	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.051sec	Cells Traveled: 186.0	Memory Used: 815920.0	Cells Expanded: 14403.0	Fringe Size: 0.0
-	AStar:(1):	Total Cost: 129.44848480983495	Runtime: 0.058sec	Cells Traveled: 223.0	Memory Used: 708232.0	Cells Expanded: 12312.0	Fringe Size: 0.0
-	W-AStar (1.3):	Total Cost: 131.17640687119282	Runtime: 0.028sec	Cells Traveled: 208.0	Memory Used: 301504.0	Cells Expanded: 4965.0	Fringe Size: 0.0
-	W-AStar (2.6):	Total Cost: 131.17640687119282	Runtime: 0.025sec	Cells Traveled: 208.0	Memory Used: 266000.0	Cells Expanded: 4359.0	Fringe Size: 0.0
+	Uniform:	Total Cost: 118.19480515339463	Runtime: 0.187sec	Cells Traveled: 186.0	Memory Used: 815920.0bytes	Cells Expanded: 14403.0
+	AStar:(1):	Total Cost: 118.19480515339463	Runtime: 0.172sec	Cells Traveled: 186.0	Memory Used: 603008.0bytes	Cells Expanded: 10475.0
+	W-AStar (1.3):	Total Cost: 120.09430009000629	Runtime: 0.062sec	Cells Traveled: 179.0	Memory Used: 300272.0bytes	Cells Expanded: 5090.0
+	W-AStar (2.6):	Total Cost: 120.09430009000629	Runtime: 0.082sec	Cells Traveled: 179.0	Memory Used: 281680.0bytes	Cells Expanded: 4736.0

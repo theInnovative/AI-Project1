@@ -15,7 +15,7 @@ public class AStar extends HeuristicAlgorithm {
 
 	public AStar(int h){
 		this.heuristic = h;
-		name = "AStar:("+h+"):";
+		name = "AStar("+h+"):";
 	}
 
 	@Override
@@ -84,4 +84,6 @@ public class AStar extends HeuristicAlgorithm {
 			return Math.sqrt(2*dx*dx) + Math.abs(dx-dy);
 		return Math.sqrt(2*dy*dy) + Math.abs(dx-dy) *0.25;
 	}
+	
+	
 }
