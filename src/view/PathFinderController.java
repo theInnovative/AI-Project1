@@ -182,8 +182,8 @@ public class PathFinderController implements Initializable {
 
 		averages[0] = new UniformSearch().getNewStats();
 		averages[1] = new AStar(1).getNewStats();
-		averages[2] = new WeightedAStar(1, 1.3).getNewStats();
-		averages[3] = new WeightedAStar(1, 2.6).getNewStats();
+		averages[2] = new WeightedAStar(1, 1.5).getNewStats();
+		averages[3] = new WeightedAStar(1, 2.0).getNewStats();
 
 		FileWriter file = new FileWriter(path2, false);
 		file.close();

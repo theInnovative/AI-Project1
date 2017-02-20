@@ -28,7 +28,7 @@ public class AStar extends HeuristicAlgorithm {
 	@Override
 	void hOfNeighbor(Cell cell) {
 
-		cell.h = euclideanDistance(cell);
+		cell.h = beelineDistance(cell);
 
 		//tie breaker
 		//cell.h*=(1.0+0.25/300);
@@ -74,7 +74,7 @@ public class AStar extends HeuristicAlgorithm {
 	protected double eightWayManhattanDistance(Cell cell){
 		double dx = Math.abs(cell.self.x-goalpoint.x);
 		double dy = Math.abs(cell.self.y-goalpoint.y);
-		return 0.25 *(dx+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy);
+		return 0.25 *((dx+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy));
 	}
 
 	/**
@@ -92,13 +92,24 @@ public class AStar extends HeuristicAlgorithm {
 	 * Calculates the distance of path traveling across the least cells from
 	 *  cell to the target cell, without taking into account cell types.
 	 * @param cell	starting location
-	 * @return Manhattan distance from cell to goal
+	 * @return beeline distance from cell to goal
 	 */
 	protected double beelineDistance(Cell cell){
 		double dx = Math.abs(cell.self.x-goalpoint.x);
 		double dy = Math.abs(cell.self.y-goalpoint.y);
 		if(dx > dy)
-			return Math.sqrt(2*dx*dx) + Math.abs(dx-dy);
-		return Math.sqrt(2*dy*dy) + Math.abs(dx-dy) *0.25;
+			return (Math.sqrt(2*dx*dx) + Math.abs(dx-dy)) *0.25;
+		return (Math.sqrt(2*dy*dy) + Math.abs(dx-dy)) *0.25;
+	}
+
+	/**
+	 * Favors nodes going horizontal since the graph is wider than it is vertical
+	 * @param cell starting location
+	 * @return
+	 */
+	protected double widescaleDistance(Cell cell){
+		double dx = Math.abs(cell.self.x-goalpoint.x);
+		double dy = Math.abs(cell.self.y-goalpoint.y);
+		return 0.25 *((dx*1.25+dy) + (Math.sqrt(2)-2) * Math.min(dx, dy));
 	}
 }
